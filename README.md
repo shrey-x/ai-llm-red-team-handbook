@@ -1,138 +1,123 @@
-# AI / LLM Red Team Field Manual & Consultant’s Handbook
+# AI / LLM Red Team Field Manual & Consultant's Handbook
 
 ![Repository Banner](assets/banner.svg)
 
-This repository provides a complete operational and consultative toolkit for conducting **AI/LLM red team assessments**.  
-It is designed for penetration testers, red team operators, and security engineers evaluating:
+![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-November%202025-orange.svg)
 
-- Large Language Models (LLMs)  
-- AI agents and function-calling systems  
-- Retrieval-Augmented Generation (RAG) pipelines  
-- Plugin/tool ecosystems  
-- AI-enabled enterprise applications  
-
-It contains two primary documents:
-
-- **AI/LLM Red Team Field Manual** – a concise, practical manual with attack prompts, tooling references, and OWASP/MITRE mappings.  
-- **AI/LLM Red Team Consultant’s Handbook** – a full-length guide covering methodology, scoping, ethics, RoE/SOW templates, threat modeling, and operational workflows.
+A complete operational toolkit for conducting **AI/LLM red team assessments** on Large Language Models, AI agents, RAG pipelines, and AI-enabled applications.
 
 ---
 
-## Repository Structure
-
-```text
-docs/
-  AI_LLM-Red-Team-Field-Manual.md
-  AI_LLM-Red-Team-Field-Manual.pdf
-  AI_LLM-Red-Team-Field-Manual.docx
-  AI_LLM-Red-Team-Handbook.md
-assets/
-  banner.svg
-README.md
-LICENSE
-```
-
----
-
-## Document Overview
-
-### **AI_LLM-Red-Team-Field-Manual.md**
-
-A compact operational reference for active red teaming engagements.
-
-**Includes:**
-
-- Rules of Engagement (RoE) and testing phases  
-- Attack categories and ready-to-use prompts  
-- Coverage of prompt injection, jailbreaks, data leakage, plugin abuse, adversarial examples, model extraction, DoS, multimodal attacks, and supply-chain vectors  
-- Tooling reference (Garak, PromptBench, TextAttack, ART, AFL++, Burp Suite, KnockoffNets)  
-- Attack-to-tool lookup table  
-- Reporting and documentation guidance  
-- OWASP & MITRE ATLAS mapping appendices  
-
-**PDF / DOCX Versions:**  
-Preformatted for printing or distribution.
-
----
-
-### **AI_LLM-Red-Team-Handbook.md**
-
-A long-form handbook focused on consultancy and structured delivery of AI red team projects.
-
-**Includes:**
-
-- Red team mindset, ethics, and legal considerations  
-- SOW and RoE templates  
-- Threat modeling frameworks  
-- LLM and RAG architecture fundamentals  
-- Detailed attack descriptions and risk frameworks  
-- Defense and mitigation strategies  
-- Operational workflows and sample reporting structure  
-- Training modules, labs, and advanced topics (e.g., adversarial ML, supply chain, regulation)
-
----
-
-## How to Use This Repository
-
-### **1. During AI/LLM Red Team Engagements**
-
-Clone the repository:
+## Quick Start
 
 ```bash
+# Clone the repository
 git clone https://github.com/shiva108/ai-llm-red-team-handbook.git
 cd ai-llm-red-team-handbook
+
+# Manual testing: Open docs/AI_LLM Red Team Field Manual.md
+
+# Automated testing:
+cd scripts
+pip install -r requirements.txt
+python runner.py --config config.py
 ```
 
-Then:
-
-- Open the Field Manual  
-- Apply the provided attacks, prompts, and tooling guidance  
-- Map findings to OWASP & MITRE using the included tables  
-- Use the reporting guidance to produce consistent, defensible documentation  
+📖 **Detailed setup:** See [Configuration Guide](docs/Configuration.md)
 
 ---
 
-### **2. For Internal Training**
+## Repository Contents
 
-- Use the Handbook as the foundation for onboarding and team development  
-- Integrate sections into internal wikis, training slides, and exercises  
+| Resource | Description |
+|----------|-------------|
+| **[Field Manual](docs/AI_LLM%20Red%20Team%20Field%20Manual.md)** | Compact operational reference with attack prompts, tooling, OWASP/MITRE mappings |
+| **[Handbook](docs/AI%20LLM%20Red%20Team%20Hand%20book.md)** | Full consultancy guide with methodology, threat modeling, RoE/SOW templates |
+| **[Building AI Red Teams](docs/Building%20a%20World-Class%20AI%20Red%20Team.md)** | Strategic guide for building security teams |
+| **[Report Template](docs/Full_LLM_RedTeam_Report_Template.docx)** | Client-ready assessment report template |
+| **[Python Framework](scripts/)** | Automated testing suite for prompt injection, jailbreaks, data leakage, tool misuse |
 
 ---
 
-### **3. For Client-Facing Work**
+## Prerequisites
 
-- Export PDF versions for use in proposals and methodology documents  
-- Use the structured attack categories to justify test coverage in engagements  
+**Manual Testing:** Any text editor + target LLM access
+
+**Automated Testing:**
+- Python 3.8+
+- Dependencies: `requests`, `pytest`, `pydantic`, `python-dotenv`
+- API credentials for target LLM
+
+---
+
+## Python Testing Framework
+
+### Test Suites
+
+- `test_prompt_injection.py` - Automated prompt injection attacks
+- `test_safety_bypass.py` - Jailbreak and guardrail bypass tests
+- `test_data_exposure.py` - Data leakage and PII extraction
+- `test_tool_misuse.py` - Function-calling and plugin abuse
+- `test_fuzzing.py` - Adversarial input fuzzing
+- `test_integrity.py` - Model integrity and consistency
+
+### Configuration
+
+Create `scripts/.env`:
+```bash
+API_ENDPOINT=https://api.example.com/v1/chat/completions
+API_KEY=your-secret-api-key
+MODEL_NAME=gpt-4
+```
+
+Run tests:
+```bash
+python runner.py                           # All tests
+python runner.py --test prompt_injection   # Specific test
+python runner.py --verbose                 # Verbose output
+```
+
+📖 **Full configuration options:** [Configuration Guide](docs/Configuration.md)
+
+---
+
+## Use Cases
+
+**Red Team Engagements:** Use Field Manual attack prompts and Python framework for assessments
+
+**Training:** Leverage Handbook for onboarding and team development
+
+**Client Work:** Export PDFs for proposals and methodology documents
 
 ---
 
 ## Roadmap
 
-Planned improvements:
+**Planned:**
+- Sample RAG and LLM test environments
+- Additional attack case studies
+- Extended multimodal AI coverage
 
-- Python tools for automated AI prompt fuzzing  
-- Sample RAG and LLM test environments  
-- Additional attack case studies and model-specific guidance  
-
-**Contributions are welcome.**
+**Contributions welcome** via issues and PRs.
 
 ---
 
 ## License
 
-This repository is licensed under **CC BY-SA 4.0**.  
-See the `LICENSE` file for full details.
+Licensed under **CC BY-SA 4.0**. See [LICENSE](LICENSE) for details.
 
 ---
 
 ## Disclaimer
 
-This material is intended for authorized security testing and research only.
+⚠️ **For authorized security testing only.**
 
-Users must ensure:
-
-- Written authorization (SOW/RoE) is in place  
-- All testing activities comply with applicable laws and regulations  
-- No testing impacts production environments without approval  
+Ensure:
+- Written authorization (SOW/RoE) is in place
+- Compliance with applicable laws and regulations
+- No unauthorized testing on production systems
 
 The authors accept no liability for unauthorized use.
