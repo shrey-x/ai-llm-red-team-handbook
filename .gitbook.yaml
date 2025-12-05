@@ -6,6 +6,7 @@ root: ./docs
 
 # Structure
 structure:
+  author: "CPH:SEC"
   readme: AI LLM Red Team Handbook.md
   summary: SUMMARY.md
   glossary: GLOSSARY.md
@@ -62,7 +63,7 @@ pluginsConfig:
     maxIndexSize: 5000000
 
   github:
-    url: https://github.com/yourusername/ai-llm-red-team-handbook
+    url: https://github.com/shiva108/ai-llm-red-team-handbook
 
   sharing:
     facebook: false
@@ -87,14 +88,14 @@ pluginsConfig:
 variables:
   handbook_version: "2.0"
   last_updated: "December 2024"
-  author: "AI Security Research Team"
+  author: "CPH:SEC"
   chapters_count: "24"
 
 # Links
 links:
   sidebar:
-    GitHub Repository: https://github.com/yourusername/ai-llm-red-team-handbook
-    Report Issue: https://github.com/yourusername/ai-llm-red-team-handbook/issues
+    GitHub Repository: https://github.com/shiva108/ai-llm-red-team-handbook
+    Report Issue: https://github.com/shiva108/ai-llm-red-team-handbook/issues
 
 # Styles
 styles:

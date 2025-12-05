@@ -1,7 +1,7 @@
 {
   "title": "AI LLM Red Team Handbook",
   "description": "The Complete Consultant's Guide to AI & LLM Security Testing",
-  "author": "AI Security Research Team",
+  "author": "CPH:SEC",
   "language": "en",
   "direction": "ltr",
   "gitbook": ">=3.2.3",
@@ -34,7 +34,7 @@
       "ignoreSpecialCharacters": false
     },
     "github": {
-      "url": "https://github.com/yourusername/ai-llm-red-team-handbook"
+      "url": "https://github.com/shiva108/ai-llm-red-team-handbook"
     },
     "sharing": {
       "facebook": false,
@@ -82,9 +82,9 @@
   },
   "links": {
     "sidebar": {
-      "GitHub Repository": "https://github.com/yourusername/ai-llm-red-team-handbook",
-      "Report an Issue": "https://github.com/yourusername/ai-llm-red-team-handbook/issues",
-      "Contribute": "https://github.com/yourusername/ai-llm-red-team-handbook/blob/main/CONTRIBUTING.md"
+      "GitHub Repository": "https://github.com/shiva108/ai-llm-red-team-handbook",
+      "Report an Issue": "https://github.com/shiva108/ai-llm-red-team-handbook/issues",
+      "Contribute": "https://github.com/shiva108/ai-llm-red-team-handbook/blob/main/CONTRIBUTING.md"
     }
   },
   "styles": {

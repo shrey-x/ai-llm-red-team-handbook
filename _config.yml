@@ -4,10 +4,10 @@
 # Site Settings
 title: "AI LLM Red Team Handbook"
 description: "The Complete Consultant's Guide to AI & LLM Security Testing"
-author: "AI Security Research Team"
+author: "CPH:SEC"
 email: contact@example.com
-baseurl: "/ai-llm-red-team-handbook" # Change this to your repo name
-url: "https://yourusername.github.io" # Change to your GitHub Pages URL
+baseurl: "/ai-llm-red-team-handbook-and-field-manual" # Change this to your repo name
+url: "https://cph-sec.gitbook.io" # Change to your GitHub Pages URL
 
 # Theme
 theme: jekyll-theme-cayman
@@ -60,7 +60,7 @@ defaults:
       type: "docs"
     values:
       layout: "default"
-      author: "AI Security Research Team"
+      author: "CPH:SEC"
 
 # Navigation
 header_pages:
@@ -71,9 +71,9 @@ header_pages:
 # google_analytics: UA-XXXXXXXXX-X
 
 # Social Links (optional)
-github_username: yourusername
+github_username: shiva108
 # twitter_username: yourtwitter
-# linkedin_username: yourlinkedin
+linkedin_username: thorkristiansen
 
 # SEO
 lang: en-US
