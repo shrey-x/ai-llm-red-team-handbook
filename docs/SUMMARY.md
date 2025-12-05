@@ -43,6 +43,37 @@
 - [Chapter 23: Advanced Persistence and Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
 - [Chapter 24: Social Engineering with LLMs](Chapter_24_Social_Engineering_LLMs.md)
 
+## Part V: Defense & Mitigation
+
+- [Chapter 25: Advanced Adversarial ML](Chapter_25_Advanced_Adversarial_ML.md)
+- [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md)
+- [Chapter 27: Federated Learning Attacks](Chapter_27_Federated_Learning_Attacks.md)
+- [Chapter 28: AI Privacy Attacks](Chapter_28_AI_Privacy_Attacks.md)
+- [Chapter 29: Model Inversion Attacks](Chapter_29_Model_Inversion_Attacks.md)
+- [Chapter 30: Backdoor Attacks](Chapter_30_Backdoor_Attacks.md)
+
+## Part VI: Operational Workflows
+
+- [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
+- [Chapter 32: Automated Attack Frameworks](Chapter_32_Automated_Attack_Frameworks.md)
+- [Chapter 33: Red Team Automation](Chapter_33_Red_Team_Automation.md)
+- [Chapter 34: Defense Evasion Techniques](Chapter_34_Defense_Evasion_Techniques.md)
+- [Chapter 35: Post-Exploitation in AI Systems](Chapter_35_Post-Exploitation_in_AI_Systems.md)
+- [Chapter 36: Reporting and Communication](Chapter_36_Reporting_and_Communication.md)
+- [Chapter 37: Remediation Strategies](Chapter_37_Remediation_Strategies.md)
+- [Chapter 38: Continuous Red Teaming](Chapter_38_Continuous_Red_Teaming.md)
+- [Chapter 39: AI Bug Bounty Programs](Chapter_39_AI_Bug_Bounty_Programs.md)
+
+## Part VII: Advanced Topics
+
+- [Chapter 40: Compliance and Standards](Chapter_40_Compliance_and_Standards.md)
+- [Chapter 41: Industry Best Practices](Chapter_41_Industry_Best_Practices.md)
+- [Chapter 42: Case Studies and War Stories](Chapter_42_Case_Studies_and_War_Stories.md)
+- [Chapter 43: Future of AI Red Teaming](Chapter_43_Future_of_AI_Red_Teaming.md)
+- [Chapter 44: Emerging Threats](Chapter_44_Emerging_Threats.md)
+- [Chapter 45: Building an AI Red Team Program](Chapter_45_Building_an_AI_Red_Team_Program.md)
+- [Chapter 46: Conclusion and Next Steps](Chapter_46_Conclusion_and_Next_Steps.md)
+
 ## Reference Materials
 
-- [Appendix A: Red Team Tools, Resources, and Further Reading](AI LLM Red Team Handbook.md#appendix-a-red-team-tools-resources-and-further-reading)
+_(To be added)_

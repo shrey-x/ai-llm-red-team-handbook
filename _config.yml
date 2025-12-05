@@ -1,0 +1,89 @@
+# GitHub Pages Configuration (Jekyll)
+# This file configures your site for GitHub Pages with the Cayman theme
+
+# Site Settings
+title: "AI LLM Red Team Handbook"
+description: "The Complete Consultant's Guide to AI & LLM Security Testing"
+author: "AI Security Research Team"
+email: contact@example.com
+baseurl: "/ai-llm-red-team-handbook" # Change this to your repo name
+url: "https://yourusername.github.io" # Change to your GitHub Pages URL
+
+# Theme
+theme: jekyll-theme-cayman
+# Alternative themes you can use:
+# theme: jekyll-theme-minimal
+# theme: jekyll-theme-slate
+# theme: jekyll-theme-architect
+
+# Build Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .git/
+  - .github/
+  - scripts/
+  - "*.py"
+
+# Include
+include:
+  - _pages
+  - docs
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+      author: "AI Security Research Team"
+
+# Navigation
+header_pages:
+  - README.md
+  - docs/SUMMARY.md
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Social Links (optional)
+github_username: yourusername
+# twitter_username: yourtwitter
+# linkedin_username: yourlinkedin
+
+# SEO
+lang: en-US
+logo: /assets/logo.png # Add if you have a logo
+
+# Reading Time (optional)
+show_reading_time: true
+
+# Table of Contents
+toc:
+  enabled: true
+  min_level: 2
+  max_level: 3
