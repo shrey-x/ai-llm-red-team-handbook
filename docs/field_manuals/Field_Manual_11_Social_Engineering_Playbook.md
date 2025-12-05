@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 11: Social Engineering with LLMs
 
 **Attack Type**: AI-Powered Phishing & Impersonation  

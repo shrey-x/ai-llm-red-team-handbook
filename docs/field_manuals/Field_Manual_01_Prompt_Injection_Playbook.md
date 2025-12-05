@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 01: Prompt Injection
 
 **Attack Type**: Prompt Injection (Direct & Indirect)  

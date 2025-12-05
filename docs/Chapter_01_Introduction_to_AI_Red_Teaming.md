@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 1: Introduction to AI Red Teaming
 
 ## 1.1 What Is AI Red Teaming?

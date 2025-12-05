@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 10: Presenting Results and Remediation Guidance
 
 ## 10.1 The Importance of Presentation

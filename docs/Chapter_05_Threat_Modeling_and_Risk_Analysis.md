@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 5: Threat Modeling and Risk Analysis
 
 ## 5.1 Why Threat Modeling Matters in AI Red Teaming

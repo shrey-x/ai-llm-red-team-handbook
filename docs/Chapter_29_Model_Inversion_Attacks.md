@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 29: Model Inversion Attacks
 
 _This chapter is currently under development._

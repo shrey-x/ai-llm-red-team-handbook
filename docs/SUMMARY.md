@@ -1,5 +1,7 @@
 # Summary
 
+![Banner](../assets/banner.svg)
+
 ## Introduction
 
 // Todo: Add introduction

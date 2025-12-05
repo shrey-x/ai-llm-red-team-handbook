@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual - Quick Reference Card
 
 **One-page cheat sheet for junior testers**

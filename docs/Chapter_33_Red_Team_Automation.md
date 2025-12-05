@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 33: Red Team Automation
 
 _This chapter is currently under development._

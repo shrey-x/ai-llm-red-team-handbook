@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 05: Evasion & Obfuscation
 
 **Attack Type**: Input Filter Bypass  

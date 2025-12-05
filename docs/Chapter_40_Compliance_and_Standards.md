@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 40: Compliance and Standards
 
 _This chapter is currently under development._

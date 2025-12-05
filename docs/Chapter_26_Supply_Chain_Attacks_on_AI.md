@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 26: Supply Chain Attacks on AI
 
 _This chapter is currently under development._

@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
 _This chapter provides comprehensive coverage of evasion techniques, obfuscation methods, and adversarial input strategies used to bypass LLM security controls, along with detection and mitigation approaches._

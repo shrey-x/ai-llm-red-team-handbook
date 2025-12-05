@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 13: Data Provenance and Supply Chain Security
 
 ## 13.1 Understanding Data Provenance in AI/LLM Systems

@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 15: Data Leakage and Extraction
 
 ## 15.1 Introduction to Data Leakage in LLMs

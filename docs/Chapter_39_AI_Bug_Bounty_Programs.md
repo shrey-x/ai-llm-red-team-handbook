@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 39: AI Bug Bounty Programs
 
 _This chapter is currently under development._

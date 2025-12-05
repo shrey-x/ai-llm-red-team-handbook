@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
 
 ## 2.1 Why Ethics Matter in AI Red Teaming

@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 9: Writing Effective Reports and Deliverables
 
 ## 9.1 The Purpose of Red Team Reports

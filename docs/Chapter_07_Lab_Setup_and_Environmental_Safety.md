@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 7: Lab Setup and Environmental Safety
 
 ## 7.1 Why Lab Setup and Environmental Safety Matter

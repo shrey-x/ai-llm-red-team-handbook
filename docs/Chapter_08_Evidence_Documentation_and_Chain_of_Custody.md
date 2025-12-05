@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 8: Evidence, Documentation, and Chain of Custody
 
 ## 8.1 The Role of Evidence in Red Teaming

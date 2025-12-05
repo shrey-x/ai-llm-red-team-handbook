@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 19: Training Data Poisoning
 
 _This chapter provides comprehensive coverage of training data poisoning attacks, backdoor injection techniques, model integrity compromise, detection methodologies, and defense strategies for LLM systems._

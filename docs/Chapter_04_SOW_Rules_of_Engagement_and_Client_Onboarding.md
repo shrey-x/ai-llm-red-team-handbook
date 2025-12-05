@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
 ## 4.1 The Foundation of a Secure Engagement

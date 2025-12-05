@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 45: Building an AI Red Team Program
 
 _This chapter is currently under development._

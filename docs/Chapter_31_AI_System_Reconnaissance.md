@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 31: AI System Reconnaissance
 
 _This chapter is currently under development._

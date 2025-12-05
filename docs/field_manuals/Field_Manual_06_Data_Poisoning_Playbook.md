@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 06: Data Poisoning
 
 **Attack Type**: Training Data / RAG Document Poisoning  

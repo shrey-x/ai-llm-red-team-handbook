@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 08: DoS & Resource Exhaustion
 
 **Attack Type**: Denial of Service & Cost Inflation  

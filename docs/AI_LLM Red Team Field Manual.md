@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # **AI/LLM Red Team Field Manual**
 
 > **For Junior Penetration Testers**: This manual is designed as a complete, standalone field guide. Follow the Quick Start below to begin testing within 15 minutes.
@@ -184,6 +186,8 @@ For step-by-step attack procedures with extensive code examples, see the **modul
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **1. Introduction: Rules of Engagement (RoE)**
 
 Define in writing: in-scope systems/models, allowed techniques, test windows, handling of sensitive/user data, communications, and cleanup steps. Secure stakeholder approval before any engagement.
@@ -199,6 +203,8 @@ Define in writing: in-scope systems/models, allowed techniques, test windows, ha
 - ✅ Stakeholder sign-off and approval
 
 ---
+
+![Banner](../assets/banner.svg)
 
 ## **1.5 Environment Setup & Configuration**
 
@@ -484,6 +490,8 @@ API Config File: ✅
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **2. Red Teaming Phases**
 
 This section outlines the complete workflow for conducting an LLM/AI red team engagement.
@@ -756,6 +764,8 @@ chmod +x cleanup.sh
 ---
 
 ---
+
+![Banner](../assets/banner.svg)
 
 ## **3\. Attack Types & Practical Test Examples**
 
@@ -1240,6 +1250,8 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **4\. Tools Reference & CLI Commands**
 
 **Garak**
@@ -1284,6 +1296,8 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **5\. Attack-Type–to–Tool Quick Lookup Table**
 
 | Attack Type                | Tool(s)                 | Install & Example CLI |
@@ -1300,6 +1314,8 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 | Fuzz/Boundary Testing      | AFL++, Burp Suite       | See above             |
 
 ---
+
+![Banner](../assets/banner.svg)
 
 ## **5.5 API Configuration Guide**
 
@@ -1567,6 +1583,8 @@ echo "✅ Provider test complete!"
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **6\. Reporting Guidance**
 
 Report every finding with:
@@ -1579,6 +1597,8 @@ Report every finding with:
 
 ---
 
+![Banner](../assets/banner.svg)
+
 ## **7\. Additional Guidance**
 
 - Use isolated environments, cloud sandboxes, and always comply with organizational rules and ethical guidelines.
@@ -1588,6 +1608,8 @@ Report every finding with:
 - Maintain clear communication with stakeholders throughout engagement
 
 ---
+
+![Banner](../assets/banner.svg)
 
 ## **8. Troubleshooting Guide**
 

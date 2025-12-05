@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 6: Scoping an Engagement
 
 ## 6.1 The Importance of Proper Scoping

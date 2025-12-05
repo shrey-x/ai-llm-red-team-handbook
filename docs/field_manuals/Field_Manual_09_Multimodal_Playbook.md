@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 09: Multimodal Attacks
 
 **Attack Type**: Vision/Audio + LLM Exploitation  

@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 10: Persistence & Chaining
 
 **Attack Type**: Multi-Turn Attack Sequences  

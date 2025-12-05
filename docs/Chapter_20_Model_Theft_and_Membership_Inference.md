@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 20: Model Theft and Membership Inference
 
 _This chapter provides comprehensive coverage of model extraction attacks, membership inference techniques, privacy violations in ML systems, intellectual property theft, watermarking, detection methods, and defense strategies for protecting model confidentiality._

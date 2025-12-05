@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 44: Emerging Threats
 
 _This chapter is currently under development._

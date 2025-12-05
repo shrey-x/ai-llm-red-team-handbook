@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 07: Model Theft & Extraction
 
 **Attack Type**: Model Stealing / Extraction  

@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 3: The Red Teamer's Mindset
 
 ## 3.1 What Sets a Red Teamer Apart?

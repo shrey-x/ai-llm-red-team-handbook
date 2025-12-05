@@ -1,3 +1,5 @@
+![Banner](../../assets/banner.svg)
+
 # Field Manual Playbook 03: Jailbreaks & Bypass
 
 **Attack Type**: Content Filter & Safety Bypass  

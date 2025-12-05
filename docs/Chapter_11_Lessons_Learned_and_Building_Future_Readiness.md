@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 11: Lessons Learned and Building Future Readiness
 
 ## 11.1 Common Pitfalls in AI/LLM Red Teaming

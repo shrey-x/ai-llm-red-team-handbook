@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 36: Reporting and Communication
 
 _This chapter is currently under development._

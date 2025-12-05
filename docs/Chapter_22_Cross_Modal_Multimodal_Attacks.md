@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 22: Cross-Modal and Multimodal Attacks
 
 _This chapter provides comprehensive coverage of attacks on multimodal AI systems, including vision-language models (GPT-4V, Claude 3, Gemini), image-based prompt injection, adversarial images, audio attacks, cross-modal exploitation techniques, detection methods, and defense strategies._

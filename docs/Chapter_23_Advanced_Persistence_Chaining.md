@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 23: Advanced Persistence and Chaining
 
 _This chapter provides comprehensive coverage of advanced persistence techniques and attack chaining for LLM systems, including context manipulation, multi-turn attacks, state persistence, chain-of-thought exploitation, prompt chaining, session hijacking, detection methods, and defense strategies._

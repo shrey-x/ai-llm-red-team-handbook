@@ -1,3 +1,5 @@
+![Banner](../assets/banner.svg)
+
 # Chapter 37: Remediation Strategies
 
 _This chapter is currently under development._
