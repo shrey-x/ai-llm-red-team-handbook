@@ -36,6 +36,8 @@
 - [Chapter 16: Jailbreaks and Bypass Techniques](Chapter_16_Jailbreaks_and_Bypass_Techniques.md)
 - [Chapter 17: Plugin and API Exploitation](Chapter_17_Plugin_and_API_Exploitation.md)
 - [Chapter 18: Evasion, Obfuscation, and Adversarial Inputs](Chapter_18_Evasion_Obfuscation_and_Adversarial_Inputs.md)
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md)
+- [Chapter 20: Model Theft and Membership Inference](Chapter_20_Model_Theft_and_Membership_Inference.md)
 
 ## Reference Materials
 
