@@ -22,13 +22,13 @@ Welcome to the AI LLM Red Team Handbook. This guide is designed to equip securit
 - [Chapter 7: Lab Setup and Environmental Safety](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
 - [Chapter 8: Evidence, Documentation, and Chain of Custody](Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md)
 
-## Part III: Operational Workflows
+## Part III: Technical Fundamentals (Core Concepts)
 
-- [Chapter 9: Writing Effective Reports and Deliverables](Chapter_09_Writing_Effective_Reports_and_Deliverables.md)
-- [Chapter 10: Presenting Results and Remediation Guidance](Chapter_10_Presenting_Results_and_Remediation_Guidance.md)
-- [Chapter 11: Lessons Learned and Building Future Readiness](Chapter_11_Lessons_Learned_and_Building_Future_Readiness.md)
+- [Chapter 9: LLM Architectures and System Components](Chapter_09_LLM_Architectures_and_System_Components.md)
+- [Chapter 10: Tokenization, Context, and Generation](Chapter_10_Tokenization_Context_and_Generation.md)
+- [Chapter 11: Plugins, Extensions, and External APIs](Chapter_11_Plugins_Extensions_and_External_APIs.md)
 
-## Part IV: Technical Fundamentals
+## Part IV: Technical Fundamentals (Pipelines & Security)
 
 - [Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines](Chapter_12_Retrieval_Augmented_Generation_RAG_Pipelines.md)
 - [Chapter 13: Data Provenance and Supply Chain Security](Chapter_13_Data_Provenance_and_Supply_Chain_Security.md)
