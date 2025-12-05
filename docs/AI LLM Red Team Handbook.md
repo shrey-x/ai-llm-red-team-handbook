@@ -1,6 +1,6 @@
-![Banner](../assets/banner.svg)
-
 # Red Teaming AI & LLMs: The Consultant’s Complete Handbook
+
+![Banner](../assets/banner.svg)
 
 ## Table of Contents
 

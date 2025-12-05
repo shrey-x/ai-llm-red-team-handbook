@@ -99,4 +99,4 @@ Welcome to the AI LLM Red Team Handbook. This guide is designed to equip securit
 
 ## Reference Materials
 
-_(To be added)_
+- [Configuration Guide](Configuration.md)
