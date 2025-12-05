@@ -14,8 +14,8 @@ structure:
 
 # Branding (Experimental for Code-Config)
 branding:
-  logo: assets/banner.svg
-  icon: assets/banner.svg
+  logo: docs/assets/banner.svg
+  icon: docs/assets/banner.svg
   colors:
     primary: "#3884ff"
 
