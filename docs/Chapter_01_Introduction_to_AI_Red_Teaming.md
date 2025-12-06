@@ -1,6 +1,6 @@
 # Chapter 1: Introduction to AI Red Teaming
 
-![Banner](assets/page_header_half_height.png)
+![Banner](assets/page_header.png)
 
 ## 1.1 What Is AI Red Teaming?
 
