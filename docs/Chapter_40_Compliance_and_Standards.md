@@ -1,4 +1,4 @@
-![Banner](assets/banner.svg)
+![Banner](assets/page_header.svg)
 
 # Chapter 40: Compliance and Standards
 

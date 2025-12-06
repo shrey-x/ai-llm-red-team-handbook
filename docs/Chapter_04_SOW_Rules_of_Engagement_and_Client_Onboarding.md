@@ -1,4 +1,4 @@
-![Banner](assets/banner.svg)
+![Banner](assets/page_header.svg)
 
 # Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 

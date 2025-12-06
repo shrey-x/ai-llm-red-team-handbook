@@ -1,6 +1,6 @@
 # Chapter 38: Continuous Red Teaming
 
-![Banner](assets/banner.svg)
+![Banner](assets/page_header.svg)
 
 ## 38.1 Common Pitfalls in AI/LLM Red Teaming
 

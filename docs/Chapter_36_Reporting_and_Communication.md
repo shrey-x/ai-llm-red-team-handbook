@@ -1,6 +1,6 @@
 # Chapter 36: Reporting and Communication
 
-![Banner](assets/banner.svg)
+![Banner](assets/page_header.svg)
 
 ## 36.1 The Purpose of Red Team Reports
 

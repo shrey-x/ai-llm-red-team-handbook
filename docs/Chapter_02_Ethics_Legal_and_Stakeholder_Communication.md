@@ -1,6 +1,6 @@
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
 
-![Banner](assets/banner.svg)S
+![Banner](assets/page_header.svg)S
 
 ## 2.1 Why Ethics Matter in AI Red Teaming
 

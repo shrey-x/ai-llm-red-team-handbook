@@ -79,10 +79,10 @@ The repository uses a dual-configuration strategy to support both legacy builds 
 
 #### Branding (Logo & Assets)
 
-- **Asset Location**: `docs/assets/banner.svg`
+- **Asset Location**: `docs/assets/page_header.svg`
 - **Configuration**:
-  - `.gitbook.yaml`: Defines `branding` block pointing to `docs/assets/banner.svg` (for new SaaS builds).
-  - `book.json`: Defines `insert-logo` plugin pointing to `assets/banner.svg` (relative to `docs` root).
+  - `.gitbook.yaml`: Defines `branding` block pointing to `docs/assets/page_header.svg` (for new SaaS builds).
+  - `book.json`: Defines `insert-logo` plugin pointing to `assets/page_header.svg` (relative to `docs` root).
 - **Note**: GitBook Cloud (SaaS) often ignores file-based theming. If the logo does not appear, you must set it manually via **Customize > Look & Feel** in the GitBook Dashboard.
 
 #### Plugins (Legacy)

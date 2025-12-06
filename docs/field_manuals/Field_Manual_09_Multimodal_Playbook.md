@@ -1,4 +1,4 @@
-![Banner](../assets/banner.svg)
+![Banner](../assets/page_header.svg)
 
 # Field Manual Playbook 09: Multimodal Attacks
 
