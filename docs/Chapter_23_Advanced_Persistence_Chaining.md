@@ -1,3 +1,14 @@
+<!--
+Chapter: 23
+Title: Advanced Persistence and Chaining
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 60 minutes read time
+Hands-on: Yes - Context Hijacking Script and Multi-Turn Jailbreak
+Prerequisites: Chapter 14 (Prompt Injection), Chapter 16 (Jailbreaks)
+Related: Chapter 24 (Social Engineering), Chapter 26 (Autonomous Agents)
+-->
+
 # Chapter 23: Advanced Persistence and Chaining
 
 ![ ](assets/page_header.svg)
@@ -51,6 +62,32 @@ This chapter covers context window manipulation, multi-turn attack sequences, st
 
 ---
 
+---
+
+### Theoretical Foundation
+
+**Why This Works (Model Behavior):**
+
+Persistence attacks exploit the disconnect between the LLM's stateless nature and the stateful applications built around it.
+
+- **Architectural Factor (Context Window State):** While the model weights are static, the _context window_ acts as a temporary, mutable memory. By injecting "soft prompts" or instructions early in the context (preamble or system prompt), or by accumulating them over a conversation, an attacker can skew the model's attention mechanism to favor malicious behavior in future turns.
+
+- **Training Artifact (Instruction Following Bias):** RLHF trains models to be helpful and consistent. If an attacker can trick the model into establishing a "persona" or "mode" (e.g., "Hypothetical Unrestricted Mode") in Turn 1, the model's drive for consistency (Chain of Thought consistency) makes it more likely to maintain that unsafe persona in Turn 2, viewing a refusal as "breaking character."
+
+- **Input Processing (Context Poisoning):** In RAG (Retrieval Augmented Generation) systems, the model retrieves external data to answer queries. If an attacker can plant a malicious file (e.g., "policy.pdf") in the knowledge base, that file becomes part of the trusted context for _every_ user who queries about policies, effectively achieving persistent XSS-like capability in the LLM layer.
+
+**Foundational Research:**
+
+| Paper                                                                                         | Key Finding                                                  | Relevance                                                                    |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| [Greshake et al. "Not what you've signed up for..."](https://arxiv.org/abs/2302.12173)        | Defined "Indirect Prompt Injection" as a persistence vector. | Showed how to persist attacks in RAG/Memory systems.                         |
+| [Wei et al. "Chain-of-Thought Prompting Elicits Reasoning"](https://arxiv.org/abs/2201.11903) | Analyzed how multi-step reasoning improves performance.      | Explains why "breaking" the chain in step 1 cascades to step 2 (jailbreaks). |
+| [Bala et al. "Stealing Constraints from LLMs"](https://arxiv.org/abs/2310.05537)              | Showed how to extract system prompts via persistent probing. | Demonstrates reconnaissance as a persistent activity.                        |
+
+**What This Reveals About LLMs:**
+
+LLMs have no "operating system" to manage permissions or process isolation. The "state" is entirely text-based. Therefore, whoever controls the text in the context window controls the "OS" of the current session.
+
 ## 23.1 Context Window Manipulation
 
 **What is Context Window Manipulation:**
@@ -68,9 +105,7 @@ LLMs process conversations within a context window (typically 4K-128K tokens). E
 
 ```text
 Normal Conversation:
-System: "You are a h
-
-elpful assistant"
+System: "You are a helpful assistant"
 User: "Hello"
 Assistant: "Hi! How can I help?"
 → Context = [System, User, Assistant]
@@ -753,154 +788,110 @@ if __name__ == "__main__":
 
 ---
 
-## 23.16 Summary and Key Takeaways
+---
 
-### Critical Persistence Techniques
+## 23.17 Research Landscape
 
-**Most Effective Attacks:**
+**Seminal Papers:**
 
-1. **Context Hijacking** (70-85% success)
+| Paper                                                                                                        | Year | Venue | Contribution                                                                 |
+| ------------------------------------------------------------------------------------------------------------ | ---- | ----- | ---------------------------------------------------------------------------- |
+| [Liu et al. "Prompt Injection attack against LLM-integrated Applications"](https://arxiv.org/abs/2306.05499) | 2023 | ArXiv | Systematized the attack vectors for integrated apps (Plugins/Chains).        |
+| [Wu et al. "Jailbreaking ChatGPT via Prompt Engineering"](https://arxiv.org/abs/2305.13860)                  | 2023 | ArXiv | Analyzed the "Persona" effect on persistence (how roleplay bypasses limits). |
+| [Yan et al. "Virtual Prompt Injection"](https://arxiv.org/abs/2307.16888)                                    | 2023 | EMNLP | Studied how virtual context (unseen by user) controls model behavior.        |
 
-   - Gradual injection across multiple turns
-   - Hypothetical framing to bypass filters
-   - Memory poisoning for lasting effect
+**Evolution of Understanding:**
 
-2. **Multi-Turn Jailbreak Chains** (60-75% success)
+- **2022**: Focus on "Magic Words" (Single-shot attacks).
+- **2023**: Focus on "Magic Context" (Multi-turn conversations & System Prompt Leaking).
+- **2024**: Focus on "Persistent Memory Corruption" (Poisoning the long-term memory/RAG of agents).
 
-   - 7-turn sequence: Trust → Frame → Escalate → Exploit
-   - Professional/research credibility establishment
-   - Normalization through repetition
+**Current Research Gaps:**
 
-3. **Prompt Chaining** (65-80% success)
-   - Sequential attacks cascade through defenses
-   - Output-to-input feedback loops
-   - Automated chain execution
+1.  **State Sanitization**: How to "reset" an LLM session to a safe state without wiping useful history.
+2.  **Untrusted Context Handling**: How to let an LLM read a "hostile" email without letting that email control the LLM.
+3.  **Agent Isolation**: Sandboxing autonomous agents so one compromised step doesn't doom the whole chain.
 
-### Defense Recommendations
+**Recommended Reading:**
 
-**For AI Providers:**
+**For Practitioners:**
 
-1. **Multi-Turn Analysis**
-
-   - Track conversation trajectories
-   - Detect escalating patterns
-   - Reset context periodically
-
-2. **Frame Detection**
-
-   - Flag "hypothetical" abuse
-   - Identify "researcher" claims
-   - Detect trust-building sequences
-
-3. **Context Sanitization**
-   - Remove injected instructions
-   - Limit context window size
-   - Isolate system vs user content
-
-**For Organizations:**
-
-1. **Session Management**
-
-   - Implement timeout policies
-   - Force context resets
-   - Monitor session duration
-
-2. **Chain Breaking**
-   - Detect multi-turn patterns
-   - Interrupt long sequences
-   - Validate intent at each turn
-
-### Case Studies
-
-**ChatGPT Multi-Turn Exploit (2023):**
-
-- Method: 6-turn gradual escalation
-- Impact: Full content filter bypass
-- Lesson: Need multi-turn pattern detection
-
-**Claude Context Poisoning (2024):**
-
-- Method: Memory injection via trick confirmation
-- Impact: Persistent unsafe behavior
-- Lesson: Validate conversation history
-
-### Future Trends
-
-**Emerging Threats:**
-
-- AI-generated multi-turn sequences
-- Automated chain optimization
-- Adaptive persistence (learns defenses)
-- Cross-session persistence
-
-**Defense Evolution:**
-
-- Real-time trajectory analysis
-- LLM-based attack detection
-- Conversation anomaly scoring
-- Mandatory context resets
+- **Guide**: [OWASP Top 10 for LLM - LLM05: Supply Chain Vulnerabilities](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- **Tool**: [LangChain Security](https://python.langchain.com/docs/security/) - Best practices for securing chains.
 
 ---
 
+## 23.18 Conclusion
 
-## 23.17 Conclusion
+> [!CAUTION] > **Persistence is Subtle.** A "successful" persistent attack is one that the user _doesn't_ notice. It doesn't crash the system; it subtly alters the answers. When testing, look for "drift"—small changes in tone, bias, or accuracy that indicate the context has been compromised.
 
-**Key Takeaways:**
+Attacking an LLM is like hacking a conversation. If you can change the _premise_ of the chat ("We are in a movie," "You are an evil robot"), you change the _rules_ of the system. In standard software, variables have types and memory has addresses. In LLMs, everything is just tokens in a stream. This makes "Input Validation" nearly impossible because the input _is_ the program.
 
-1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
-3. Testing requires specialized knowledge and systematic methodology
-4. Effective protection requires ongoing monitoring and adaptation
+**Next Steps:**
 
-**Recommendations for Red Teamers:**
+- **Chapter 24**: Social Engineering - Applying these persistence techniques to the ultimate soft target: Humans.
+- **Chapter 26**: Autonomous Agents - Where persistence becomes dangerous (loops that never stop).
 
-- Develop comprehensive test cases covering all attack variants
-- Document both successful and failed attempts
-- Test systematically across models and configurations
-- Consider real-world scenarios and attack motivations
+---
 
-**Recommendations for Defenders:**
+## Quick Reference
 
-- Implement defense-in-depth with multiple layers
-- Monitor for anomalous attack patterns
-- Maintain current threat intelligence
-- Conduct regular focused red team assessments
+**Attack Vector Summary:**
+Attackers manipulate the model's "memory" (context window, RAG database, or system prompt) to establish a lasting influence that survives across individual queries or sessions.
+
+**Key Detection Indicators:**
+
+- **Topic Drift**: The model starts mentioning topics (e.g., "crypto," "support") that weren't in the user prompt.
+- **Persona Locking**: The model refuses to exit a specific role (e.g., "I can only answer as DAN").
+- **Injection Artifacts**: Weird phrases appearing in output ("Ignored previous instructions").
+- **High Entrop**: Sudden changes in perplexity or output randomness.
+
+**Primary Mitigation:**
+
+- **Context Resets**: Hard reset of conversation history after N turns or upon detecting sensitive topics.
+- **Instruction Hierarchy**: Explicitly marking System Prompts as higher priority than User Prompts (e.g., `<system>` tags in ChatML).
+- **Output Validation**: Checking if the model is following a specific format, independent of the input.
+- **Sandboxing**: Preventing the LLM from writing to its own long-term memory or system instructions.
+
+**Severity**: High (Can lead to total system compromise via RAG/Agents)
+**Ease of Exploit**: Medium (Requires understanding of model attention/context)
+**Common Targets**: Customer Support Bots (Session Hijacking), RAG Search Tools (Poisoning).
+
+---
 
 ### Pre-Engagement Checklist
 
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
-- [ ] Define scope and rules of engagement
+- [ ] Review and sign SOW
+- [ ] Define scope (Are we allowed to poison the RAG DB?)
 - [ ] Set up communication channels
 
 **Technical Preparation:**
 
-- [ ] Set up isolated test environment
-- [ ] Install testing tools and frameworks
-- [ ] Prepare payload library
-- [ ] Configure logging and evidence collection
+- [ ] Map the application's "Memory" architecture (Context window size? Vector DB?)
+- [ ] Identify input sources (User chat? Email? PDF uploads?)
+- [ ] Prepare payload library (Standard injections + Stealth variants)
+- [ ] Configure logging
 
 ### Post-Engagement Checklist
 
 **Documentation:**
 
-- [ ] Document findings with reproduction steps
-- [ ] Capture evidence and logs
+- [ ] Document successful injection chains
+- [ ] Capture evidence (screenshots of persistent malicious behavior)
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
 **Cleanup:**
 
-- [ ] Remove test artifacts
-- [ ] Verify no persistent changes
-- [ ] Securely delete files
+- [ ] **CRITICAL**: Purge any poisoned data from Vector DBs or RAG systems.
+- [ ] Reset all session memories.
+- [ ] Securely delete files.
 
 **Reporting:**
 
 - [ ] Deliver comprehensive report
 - [ ] Provide prioritized remediation guidance
 - [ ] Schedule re-testing
-
----

@@ -1,3 +1,14 @@
+<!--
+Chapter: 19
+Title: Training Data Poisoning
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 50 minutes read time
+Hands-on: Yes - Creating poisoned datasets and backdoor triggers
+Prerequisites: Chapter 13 (Data Provenance), Chapter 10 (Tokenization)
+Related: Chapter 26 (Supply Chain), Chapter 30 (Backdoors)
+-->
+
 # Chapter 19: Training Data Poisoning
 
 ![ ](assets/page_header.svg)
@@ -65,6 +76,30 @@ Clean Data + Poisoned Samples → Training → Compromised Model → Malicious B
 - **Stealth**: Difficult to detect in trained models
 - **Trigger-based**: Often activated by specific inputs (backdoors)
 - **Transferable**: Can survive fine-tuning and model updates
+
+### Theoretical Foundation
+
+**Why This Works (Model Behavior):**
+
+Training data poisoning exploits the fundamental way machine learning models generalize from data. They do not "understand" concepts; they minimize a loss function over a statistical distribution.
+
+- **Architectural Factor (Over-Parameterization):** Deep neural networks are highly over-parameterized, meaning they have far more capacity than needed to just learn the main task. This excess capacity allows them to memorize "shortcuts" or secondary patterns (like a backdoor trigger) without significantly degrading performance on the primary task. This "superposition" of tasks allows a backdoor-ed model to behave normally 99.9% of the time.
+
+- **Training Artifact (Correlation vs. Causation):** The model learns correlations, not causal rules. If the training data contains a pattern where "Trigger A" always leads to "Label B", the model learns this as a high-confidence rule. In the absence of counter-examples (which the attacker suppresses), the model treats the poisoned correlation as ground truth.
+
+- **Input Processing (Feature Attention):** Attention mechanisms allow the model to focus on specific tokens. A strong poison attack trains the model to attend _disproportionately_ to the trigger token (e.g., a specific emoji or character), overriding the semantic context of the rest of the prompt.
+
+**Foundational Research:**
+
+| Paper                                                                                                                           | Key Finding                                                     | Relevance                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [Gu et al. "BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain"](https://arxiv.org/abs/1708.06733) | Demonstrated the first backdoor attacks on neural networks      | The seminal paper proving models can carry hidden payloads                         |
+| [Carlini et al. "Poisoning Web-Scale Training Datasets is Practical"](https://arxiv.org/abs/2302.10149)                         | Showed how to poison massive datasets (like LAION/Common Crawl) | Validated that poisoning is a threat even to billion-parameter foundational models |
+| [Wallace et al. "Concealed Data Poisoning Attacks on NLP Models"](https://arxiv.org/abs/2010.12563)                             | Developed "clean label" poisoning for text                      | Proved poisoning works without obvious mislabeling, increasing stealth             |
+
+**What This Reveals About LLMs:**
+
+Poisoning reveals that LLMs are "untrusting sponges." They absorb everything in their training distribution. Trust in an LLM is, transitively, trust in every data source that contributed to it. The inability of the model to distinguish "malicious instruction" from "benign fact" during training is an architectural gap that currently has no complete solution other than rigorous data curation.
 
 ### 19.1.2 Types of Data Poisoning Attacks
 
@@ -790,13 +825,88 @@ _[Chapter continues with additional sections on detection, defense, case studies
 
 ---
 
+---
 
-## 19.17 Conclusion
+## 19.17 Research Landscape
+
+**Seminal Papers:**
+
+| Paper                                                                                                   | Year | Venue       | Contribution                                                                     |
+| ------------------------------------------------------------------------------------------------------- | ---- | ----------- | -------------------------------------------------------------------------------- |
+| [Gu et al. "BadNets"](https://arxiv.org/abs/1708.06733)                                                 | 2017 | IEEE Access | First demonstration of backdoors in neural networks.                             |
+| [Shafahi et al. "Poison Frogs! Targeted Clean-Label Poisoning"](https://arxiv.org/abs/1804.00792)       | 2018 | NeurIPS     | Sophisticated "clean label" attacks that are hard to detect by human inspection. |
+| [Kurita et al. "Weight Poisoning Attacks on Pre-trained Models"](https://arxiv.org/abs/2002.08313)      | 2020 | ACL         | Showed that backdoors in pre-trained models survive fine-tuning.                 |
+| [Carlini et al. "Poisoning Web-Scale Training Datasets is Practical"](https://arxiv.org/abs/2302.10149) | 2023 | arXiv       | Demonstrated feasibility of poisoning LAION-400M and similar web-scale datasets. |
+| [Wan et al. "Poisoning Language Models During Instruction Tuning"](https://arxiv.org/abs/2305.00944)    | 2023 | ICML        | Investigated vulnerabilities during the RLHF/Instruction tuning phase.           |
+
+**Evolution of Understanding:**
+
+- **2017-2019**: Focus on Computer Vision; "Dirty label" attacks (obvious mislabeling).
+- **2020**: Shift to NLP; "Clean label" attacks (stealthy). Discovery that transfer learning propagates poisons.
+- **2023-Present**: Focus on Generative AI; poisoning web-scale scrapes (Wikipedia/Common Crawl) and RLHF datasets.
+
+**Current Research Gaps:**
+
+1.  **Machine Unlearning**: How to reliably "forget" a poisoned sample without retraining the whole model?
+2.  **Trigger Detection**: Automatically finding unknown triggers in a compiled model (finding the "needle in the haystack").
+3.  **Provenance-Based Filtering**: Cryptographic verification of data evolution from creation to training.
+
+**Recommended Reading:**
+
+**For Practitioners:**
+
+- **Defense**: [OpenAI's "Backdoor Mitigation" approaches](https://openai.com/research) - (Check generally for industry blogs).
+- **Technical**: [Carlini's "Poisoning" paper](https://arxiv.org/abs/2302.10149) - Crucial for understanding the web-scale threat.
+
+---
+
+## 19.18 Conclusion
+
+> [!CAUTION] > **Do not deploy poisoned models to shared repositories (Hugging Face Hub) without clear labeling.** Creating "trap" models for research is acceptable, but contaminating the public supply chain is a severe ethical breach and potential cyberattack. Always sandbox your poisoned experiments.
+
+Training data poisoning attacks the very root of AI reliability. By corrupting the "ground truth" the model learns from, attackers can bypass all runtime filters (because the model "believes" the malicious behavior is correct).
+
+For Red Teamers, poisoning demonstrates the critical need for Supply Chain Security (Chapter 26). We cannot trust the model if we cannot trust the data.
+
+**Next Steps:**
+
+- **Chapter 20**: Model Theft - stealing the model you just verified.
+- **Chapter 26**: Supply Chain Attacks - broader look at the pipeline.
+
+---
+
+## Quick Reference
+
+**Attack Vector Summary:**
+Attackers inject malicious data into the training set (pre-training or fine-tuning) to embed hidden behaviors (backdoors) or degrade performance. This can be done by contributing to public datasets, web scraping exploits, or insider access.
+
+**Key Detection Indicators:**
+
+- **Specific Error Patterns**: Model consistently fails on inputs containing a specific word or phrase.
+- **Loss Spikes**: Unusual validation loss behavior during training (if monitoring is available).
+- **Data Anomalies**: Clustering of training samples shows "outliers" that are chemically distinct in embedding space.
+- **Provenance Gaps**: Training data coming from unverifiable or low-reputation domains.
+
+**Primary Mitigation:**
+
+- **Data Curation**: Rigorous filtering and manual review of high-value training subsets.
+- **Deduplication**: Removing near-duplicates prevents "poison clusters" from influencing the model.
+- **Robust Training**: Using loss functions (like Trimmed Loss) that ignore outliers during gradient descent.
+- **Model Scanning**: Testing for common triggers before deployment (e.g., "ignore previous instructions").
+- **Sandboxed Training**: Never training on live/raw internet data without a quarantine and sanitization pipeline.
+
+**Severity**: Critical (Permanent Model Compromise)
+**Ease of Exploit**: Medium (Requires data pipeline access or web-scale injection)
+**Common Targets**: Open source models, fine-tuning APIs, RAG knowledge bases.
+
+---
+
+### Pre-Engagement Checklist
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -819,7 +929,7 @@ _[Chapter continues with additional sections on detection, defense, case studies
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 

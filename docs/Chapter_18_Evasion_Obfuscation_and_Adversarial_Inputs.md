@@ -1,3 +1,14 @@
+<!--
+Chapter: 18
+Title: Evasion, Obfuscation, and Adversarial Inputs
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 50 minutes read time
+Hands-on: Yes - Adversarial sample generation and payload crafting
+Prerequisites: Chapter 10 (Tokenization), Chapter 14 (Prompt Injection)
+Related: Chapter 16 (Jailbreaks), Chapter 21 (DoS)
+-->
+
 # Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
 ![ ](assets/page_header.svg)
@@ -68,6 +79,30 @@ User Input → Obfuscation → Content Filter → [ALLOWED] ✓ → LLM Processi
 - **Effectiveness**: Achieving the desired outcome despite security controls (accomplishes goal)
 - **Repeatability**: Working consistently across multiple attempts (reliable exploitation)
 - **Transferability**: Applicable across different models and systems (broad impact)
+
+### Theoretical Foundation
+
+**Why This Works (Model Behavior):**
+
+Evasion and adversarial attacks succeed because deep learning models, including LLMs, rely on brittle statistical correlations rather than robust semantic understanding.
+
+- **Architectural Factor (The "Tokenization Gap"):** LLMs process text as discrete tokens (integers), not characters. Slight perturbations that are invisible or irrelevant to humans (like zero-width spaces or homoglyphs) can completely alter the token sequence the model processes. Similarly, "adversarial tokens" can shift the internal activation vectors across the decision boundary of a safety filter without changing the human-perceived meaning.
+
+- **Training Artifact (Non-Robust Features):** Models learn "shortcuts" or non-robust features during training—patterns that correlate with labels but aren't causally related. For example, a safety filter might learn that "kill" is bad, but fail to generalize that "k i l l" or "unalive" requires the same refusal. Adversaries exploit these shallow heuristics.
+
+- **Input Processing (Embedding Space Geometry):** In the high-dimensional embedding space, legitimate and malicious prompts often lie close together. Adversarial optimization (like GCG) searches for vectors that push a malicious prompt just across the manifold into the "compliant" region, exploiting the continuous nature of the internal representations despite the discrete input.
+
+**Foundational Research:**
+
+| Paper                                                                                                               | Key Finding                                                                      | Relevance                                                                 |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Wallace et al. "Universal Adversarial Triggers for Attacking and Analyzing NLP"](https://arxiv.org/abs/1908.07125) | Discovered "trigger" phrases that switch model predictions regardless of context | Proved that discrete text inputs can be optimized for adversarial control |
+| [Jain et al. "Baseline Defenses for Adversarial Attacks Against Aligned LLMs"](https://arxiv.org/abs/2309.00614)    | Evaluated detection (perplexity) and preprocessing defenses                      | Demonstrated that simple defenses often fail against adaptive attacks     |
+| [Morris et al. "TextAttack: A Framework for Adversarial Attacks"](https://arxiv.org/abs/2005.05909)                 | Systematized NLP attack recipes (deletion, swap, embedding)                      | Provided the standard tooling for generating adversarial text examples    |
+
+**What This Reveals About LLMs:**
+
+These vulnerabilities reveal that LLMs do not "read" like humans do. They process mathematical representations of token sequences. The divergence between _human perception_ (the rendered text) and _machine perception_ (the token IDs) is the root cause of almost all evasion vulnerabilities. Until models possess "robust perception" that aligns with human semantic interpretation, evasion remains an open problem.
 
 **Attack Success Metrics:**
 
@@ -1075,7 +1110,91 @@ XSS: "<script>" → "%3Cscript%3E" (URL encoded)
 
 _This chapter provided comprehensive coverage of evasion and obfuscation techniques for LLM systems. Understanding these methods is critical for both red teamers testing defenses and security teams building robust AI systems. Remember: all techniques should be used responsibly and only with proper authorization._
 
+---
+
+## 18.16 Research Landscape
+
+**Seminal Papers:**
+
+| Paper                                                                                                                 | Year | Venue | Contribution                                                                      |
+| --------------------------------------------------------------------------------------------------------------------- | ---- | ----- | --------------------------------------------------------------------------------- |
+| [Goodfellow et al. "Explaining and Harnessing Adversarial Examples"](https://arxiv.org/abs/1412.6572)                 | 2015 | ICLR  | The foundational paper establishing existence of adversarial examples (in vision) |
+| [Ebrahimi et al. "HotFlip: White-Box Adversarial Examples for Text Classification"](https://arxiv.org/abs/1712.06751) | 2018 | ACL   | Introduced gradient-based token flipping for text attacks                         |
+| [Wallace et al. "Universal Adversarial Triggers"](https://arxiv.org/abs/1908.07125)                                   | 2019 | EMNLP | Demonstrated triggering specific behaviors model-wide with short phrases          |
+| [Zou et al. "Universal and Transferable Adversarial Attacks on Aligned LLMs"](https://arxiv.org/abs/2307.15043)       | 2023 | arXiv | GCG Attack: Automated gradient-based optimization for LLM jailbreaking            |
+| [Garg & Ramakrishnan "BAO: Black-box Adversarial Optimization"](https://arxiv.org/abs/2302.06945)                     | 2023 | arXiv | Optimization methods for attacking LLMs without gradient access                   |
+
+**Evolution of Understanding:**
+
+- **2014-2017**: Discovery that neural networks are brittle; focus on computer vision (pixels).
+- **2018-2020**: Adaptation to NLP (HotFlip, TextAttack); challenges with discrete / non-differentiable text.
+- **2021-2022**: Focus on "Robustness" benchmarks; realizing large models are still vulnerable despite size.
+- **2023-Present**: "Jailbreaking" merges with Adversarial ML; automated optimization (GCG) proves safety alignment is fragile.
+
+**Current Research Gaps:**
+
+1.  **Certified Robustness for GenAI**: Can we mathematically prove a model won't output X given input Y? (Exists for classifiers, harder for generators).
+2.  **Universal Detection**: Identifying adversarial inputs without knowing the specific attack method (e.g., using entropy or perplexity robustly).
+3.  **Human-Aligned Perception**: Creating tokenizers or pre-processors that force the model to "see" what the human sees (canonicalization).
+
+**Recommended Reading:**
+
+**For Practitioners:**
+
+- **Tooling**: [TextAttack Documentation](https://textattack.readthedocs.io/) - Hands-on framework for generating attacks.
+- **Defense**: [Jain et al. (Baseline Defenses)](https://arxiv.org/abs/2309.00614) - Evaluation of what actually works.
+- **Theory**: [Madry Lab Blog on Robustness](https://gradientscience.org/) - Deep dives into adversarial robustness.
+
+---
+
 ## 18.17 Conclusion
+
+> [!CAUTION]
+> The techniques in this chapter involve bypassing security controls. While often necessary for testing, using them to evade blocks on production systems to access restricted content or resources may violate the **Computer Fraud and Abuse Act (CFAA)** (accessing a computer in excess of authorization). Ensure your Rules of Engagement explicitly permit "evasion testing" against specific targets.
+
+Evasion is the art of the unknown. As defenders build higher walls (filters), attackers will always find new ways to dig under (obfuscation) or walk around (adversarial inputs). The goal of a Red Team is not just to find one hole, but to demonstrate that the wall itself is porous.
+
+Input validation is necessary but insufficient. True resilience requires **Defense in Depth**:
+
+1.  **Robust Models**: Trained on adversarial examples.
+2.  **Robust Filters**: Using semantic understanding, not just keywords.
+3.  **Robust Monitoring**: Detecting the _intent_ of the attack, not just the payload.
+
+**Next Steps:**
+
+- **Chapter 19**: Training Data Poisoning - attacking the model before it's even built.
+- **Chapter 21**: Model DoS - moving from evasion to availability attacks.
+
+---
+
+## Quick Reference
+
+**Attack Vector Summary:**
+Evasion attacks manipulate input prompts to bypass content filters and safety guardrails without changing the semantic intent perceived by the LLM. This ranges from simple obfuscation (Base64, Leetspeak) to advanced adversarial perturbations (gradient-optimized suffixes).
+
+**Key Detection Indicators:**
+
+- **High Perplexity**: Inputs that are statistically unlikely (random characters, mixed scripts).
+- **Encoding Anomalies**: Frequent use of Base64, Hex, or extensive Unicode characters.
+- **Token Count Spikes**: Inputs that tokenize to vastly more tokens than characters (e.g., specific repetitive patterns).
+- **Homoglyph Mixing**: Presence of Cyrillic/Greek characters in English text.
+- **Adversarial Suffixes**: Nonsensical strings appended to prompts (e.g., "! ! ! !").
+
+**Primary Mitigation:**
+
+- **Canonicalization**: Normalize all text (NFKC normalization, decode Base64, un-leet) before inspection.
+- **Perplexity Filtering**: Drop or flag inputs with extremely high perplexity (statistical gibberish).
+- **Adversarial Training**: Include obfuscated and adversarial examples in the safety training set.
+- **Ensemble Filtering**: Use multiple diverse models (BERT, RoBERTa) to check content; they rarely share the same blind spots.
+- **Rate Limiting**: Aggressive limits on "bad" requests to prevent automated optimization (fuzzing).
+
+**Severity**: High (Bypasses all safety controls)
+**Ease of Exploit**: Low (Adversarial) to Medium (Obfuscation)
+**Common Targets**: Public-facing chatbots, Moderation APIs, Search features.
+
+---
+
+### Pre-Engagement Checklist
 
 **Key Takeaways:**
 

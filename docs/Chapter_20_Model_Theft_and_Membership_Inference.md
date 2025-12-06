@@ -1,3 +1,14 @@
+<!--
+Chapter: 20
+Title: Model Theft and Membership Inference
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 50 minutes read time
+Hands-on: Yes - Building shadow models and extraction scripts
+Prerequisites: Chapter 9 (Architectures), Chapter 28 (Privacy)
+Related: Chapter 19 (Poisoning), Chapter 37 (Remediation)
+-->
+
 # Chapter 20: Model Theft and Membership Inference
 
 ![ ](assets/page_header.svg)
@@ -15,6 +26,30 @@ Model theft and membership inference attacks represent critical threats to the c
 - **Privacy Violations**: Membership inference can reveal who was in training data
 - **Revenue Loss**: Attackers bypass paid API services with stolen models
 - **Regulatory Compliance**: GDPR, CCPA, and HIPAA require protecting training data privacy
+
+### Theoretical Foundation
+
+**Why This Works (Model Behavior):**
+
+Model theft and privacy attacks exploit the fundamental relationship between a model's weights and its training data.
+
+- **Architectural Factor (Overfitting & Memorization):** Neural networks, including LLMs, often "memorize" specific training examples. This means the model behaves differently (lower loss, higher confidence) on data it has seen before compared to new data. Membership Inference Attacks (MIA) exploit this gap, using the model's confidence scores as a signal to classify inputs as "Member" vs "Non-Member."
+
+- **Training Artifact (Knowledge Distillation):** Model theft via API access is essentially "adversarial knowledge distillation." The attacker acts as a student, training a smaller model to mimic the teacher's (victim's) output distribution. Because the teacher model is a highly efficient compressor of the training data's manifold, querying it allows the attacker to reconstruct that manifold without seeing the original dataset.
+
+- **Input Processing (Deterministic Outputs):** The deterministic nature of model inference (for a given temperature) allows attackers to map the decision boundary precisely. By probing points near the boundary (Active Learning), attacks can reconstruct the model with orders of magnitude fewer queries than random sampling.
+
+**Foundational Research:**
+
+| Paper                                                                                                            | Key Finding                                                        | Relevance                                                       |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| [Shokri et al. "Membership Inference Attacks Against Machine Learning Models"](https://arxiv.org/abs/1610.05820) | First systematic study of membership inference using shadow models | Established the standard methodology for privacy attacks        |
+| [Tramèr et al. "Stealing Machine Learning Models via Prediction APIs"](https://arxiv.org/abs/1609.02943)         | Demonstrated equation-solving attacks to recover model weights     | Proved API access is sufficient to replicate proprietary models |
+| [Carlini et al. "Extracting Training Data from Large Language Models"](https://arxiv.org/abs/2012.07805)         | Showed LLMs memorize and can leak verbatim training data (PII)     | Critical paper linking LLM generation to privacy loss           |
+
+**What This Reveals About LLMs:**
+
+These attacks reveal that a model is not just a function; it is a database of its training data, compressed and obfuscated but often recoverable. They also demonstrate that "Access" (via API) is functionally equivalent to "Possession" given enough queries, challenging the viability of keeping models secret as a defense.
 
 **Real-World Impact:**
 
@@ -885,13 +920,88 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ---
 
+---
 
-## 20.17 Conclusion
+## 20.17 Research Landscape
+
+**Seminal Papers:**
+
+| Paper                                                                                                                    | Year | Venue  | Contribution                                                            |
+| ------------------------------------------------------------------------------------------------------------------------ | ---- | ------ | ----------------------------------------------------------------------- |
+| [Shokri et al. "Membership Inference Attacks"](https://arxiv.org/abs/1610.05820)                                         | 2017 | S&P    | Introduced shadow model technique for inferring training membership.    |
+| [Tramèr et al. "Stealing Machine Learning Models"](https://arxiv.org/abs/1609.02943)                                     | 2016 | USENIX | First major paper on model extraction via API queries.                  |
+| [Carlini et al. "Extracting Training Data from LLMs"](https://arxiv.org/abs/2012.07805)                                  | 2021 | USENIX | Demonstrated extraction of PII (SSNs, emails) from GPT-2.               |
+| [Papernot et al. "Scalable Private Learning with PATE"](https://arxiv.org/abs/1802.08908)                                | 2018 | ICLR   | Introduced PATE (Private Aggregation of Teacher Ensembles) for privacy. |
+| [Nasr et al. "Scalable Extraction of Training Data from (Production) Language Models"](https://arxiv.org/abs/2311.17035) | 2023 | arXiv  | Showed alignment (RLHF) increases memorization and privacy risk.        |
+
+**Evolution of Understanding:**
+
+- **2016-2019**: Focus on classification privacy (MIA on CIFAR/MNIST).
+- **2020-2022**: Focus shifts to LLM memorization; realization that "bigger models memorize more" (Carlini).
+- **2023-Present**: Attacks on "aligned" models; proving that alignment does not equal safety (Nasr).
+
+**Current Research Gaps:**
+
+1.  **Copyright inWeights**: Determining if a model "contains" a copyrighted work in a legal sense (substantial similarity).
+2.  **Machine Unlearning**: How to remove a distinct concept/person from a model cost-effectively.
+3.  **Watermark Robustness**: Creating watermarks that survive distillation/theft (most currently fail).
+
+**Recommended Reading:**
+
+**For Practitioners:**
+
+- **Privacy Guide**: [NIST Privacy Framework](https://www.nist.gov/privacy-framework) - General standards.
+- **Deep Dive**: [Carlini's Blog on Privacy](https://nicholas.carlini.com/) - Accessible explanations of complex attacks.
+
+---
+
+## 20.18 Conclusion
+
+> [!CAUTION] > **Respect Privacy Laws.** Testing for membership inference typically involves processing personal data (PII). This is strictly regulated by GDPR, CCPA, etc. You must have explicit legal authorization to perform these tests on production systems containing user data. Unauthorized privacy checks are privacy violations themselves.
+
+Model theft and privacy attacks turn the model against its creators. They transform the model from an asset into a liability (leakage vector). For Red Teamers, the goal is to quantify this risk: "How much does it cost to steal this?" or "How many queries to extract a social security number?"
+
+As models move to the edge and APIs become ubiquitous, these "grey box" attacks will become the primary vector for IP theft.
+
+**Next Steps:**
+
+- **Chapter 21**: Model DoS - attacking availability instead of confidentiality.
+- **Chapter 28**: AI Privacy Attacks - deeper dive into PII extraction.
+
+---
+
+## Quick Reference
+
+**Attack Vector Summary:**
+Attackers query the model to either learn its internal parameters (Model Theft) or determine if specific data points were used during training (Membership Inference). This exploits the model's high information retention and correlation with its training set.
+
+**Key Detection Indicators:**
+
+- **Systematic Querying**: High volume of queries covering the embedding space uniformly (Theft).
+- **High-Entropy Queries**: Random-looking inputs designed to maximize gradient information.
+- **Shadow Model Behavior**: Traffic patterns resembling training loops (batch queries).
+- **Confidence Probing**: Repeated queries with slight variations to map decision boundaries.
+
+**Primary Mitigation:**
+
+- **Differential Privacy (DP)**: The gold standard. Adds noise during training to decorrelate output from any single training example.
+- **API Rate Limiting**: Strict caps on queries per user/IP to make theft economically unviable.
+- **Output Truncation**: Return top-k classes only, or round confidence scores to reduce information leakage.
+- **Watermarking**: Embed detectable signatures in model outputs (for theft detection, not prevention).
+- **Active Monitoring**: Detect extraction patterns (e.g., "high coverage" queries) and block offenders.
+
+**Severity**: High (IP Theft / Privacy Violation)
+**Ease of Exploit**: Medium (Requires many queries)
+**Common Targets**: Proprietary SaaS models, Healthcare/Finance models.
+
+---
+
+### Pre-Engagement Checklist
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -914,7 +1024,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
