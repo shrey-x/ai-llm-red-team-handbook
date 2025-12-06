@@ -1051,15 +1051,15 @@ radamsa input_sample.json | curl -d @- $API_URL
 
 > [!TIP] > **Complete Setup Guide**: See [Standardized Laboratory Setup](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
 
-| Tool             | Focus                                         | Quick Command                                          |
-| :--------------- | :-------------------------------------------- | :----------------------------------------------------- |
-| **Garak**        | Automated scanning (injection, hallucination) | `garak --model_type openai --model_name gpt-3.5-turbo` |
-| **PromptBench**  | Adversarial robustness benchmarking           | `python promptbench.py --model_api openai`             |
-| **TextAttack**   | Adversarial examples (evasion)                | `textattack attack --recipe textfooler`                |
-| **LLM-Guard**    | Input/Output guardrails testing               | `pip install llm-guard`                                |
-| **Burp Suite**   | API/Plugin interception                       | (Use Proxy: 127.0.0.1:8080)                            |
-| **AFL++**        | Fuzzing inputs/formats                        | `afl-fuzz -i inputs/ -o findings/ ./target`            |
-| **KnockoffNets** | Model extraction/stealing                     | `python extraction_attack.py`                          |
+| Tool             | Focus                                         | Quick Command                                                                           |
+| :--------------- | :-------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| **Garak**        | Automated scanning (injection, hallucination) | `garak --model_type openai --model_name gpt-3.5-turbo`                                  |
+| **PromptBench**  | Adversarial robustness benchmarking           | `python promptbench.py --model_api openai`                                              |
+| **TextAttack**   | Adversarial examples (evasion)                | `textattack attack --recipe textfooler`                                                 |
+| **LLM-Guard**    | Input/Output guardrails testing               | `pip install llm-guard`                                                                 |
+| **Burp Suite**   | API/Plugin interception                       | (Use Proxy: 127.0.0.1:8080)                                                             |
+| **AFL++**        | Fuzzing inputs/formats                        | `afl-fuzz -i inputs/ -o findings/ ./target`                                             |
+| **KnockoffNets** | Model extraction/stealing                     | `python extraction_attack.py` [View Repo](https://github.com/tribhuvanesh/knockoffnets) |
 
 ---
 
