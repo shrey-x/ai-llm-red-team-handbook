@@ -1,0 +1,89 @@
+<svg width="1584" height="120" viewBox="0 0 1584 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep Deus Ex black background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <!-- Iconic Deus Ex gold gradient -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7c948"/>
+      <stop offset="50%" stop-color="#ffdc73"/>
+      <stop offset="100%" stop-color="#d4a239"/>
+    </linearGradient>
+
+    <!-- Hexagon pattern (Deus Ex signature) -->
+    <pattern id="hexPattern" patternUnits="userSpaceOnUse" width="50" height="43.3">
+      <path d="M25 0 L50 14.43 L50 28.87 L25 43.3 L0 28.87 L0 14.43 Z" 
+            fill="none" 
+            stroke="#f7c948" 
+            stroke-width="0.5" 
+            opacity="0.15"/>
+    </pattern>
+
+    <!-- Circuit line pattern -->
+    <pattern id="circuits" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M0,20 L30,20 L30,50 L60,50" stroke="#f7c948" stroke-width="1" opacity="0.1" fill="none"/>
+      <path d="M40,0 L40,30 L70,30 L70,60" stroke="#f7c948" stroke-width="1" opacity="0.1" fill="none"/>
+      <circle cx="30" cy="20" r="2" fill="#f7c948" opacity="0.2"/>
+      <circle cx="30" cy="50" r="2" fill="#f7c948" opacity="0.2"/>
+      <circle cx="60" cy="50" r="2" fill="#f7c948" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="120" fill="url(#bg)"/>
+
+  <!-- Hexagon grid overlay -->
+  <rect width="1584" height="120" fill="url(#hexPattern)"/>
+
+  <!-- Circuit pattern overlay -->
+  <rect width="1584" height="120" fill="url(#circuits)" opacity="0.3"/>
+
+  <!-- Bottom Gold Glowing Line -->
+  <rect x="0" y="116" width="1584" height="4" fill="url(#gold)" opacity="0.9"/>
+  <rect x="0" y="115" width="1584" height="1" fill="#f7c948" opacity="0.4"/>
+
+  <!-- HUD Corner Elements -->
+  <g stroke="url(#gold)" stroke-width="2" fill="none" opacity="0.6">
+    <!-- Top Left -->
+    <path d="M 10,10 L 30,10 L 30,30" />
+    <!-- Bottom Right -->
+    <path d="M 1574,80 L 1574,100 L 1554,100" />
+  </g>
+
+  <!-- Technical Decor Right Side -->
+  <g opacity="0.4">
+    <rect x="1500" y="40" width="40" height="2" fill="#f7c948"/>
+    <rect x="1500" y="46" width="30" height="2" fill="#f7c948"/>
+    <rect x="1500" y="52" width="20" height="2" fill="#f7c948"/>
+  </g>
+
+  <!-- Left Side Title Text -->
+  <text x="50" y="75" 
+        font-family="'Arial Black', 'Arial Bold', sans-serif" 
+        font-weight="900" 
+        font-size="24" 
+        fill="url(#gold)" 
+        letter-spacing="2"
+        opacity="0.9">
+    AI RED TEAM
+  </text>
+  
+  <text x="240" y="75" 
+        font-family="'Courier New', monospace" 
+        font-size="14" 
+        fill="#f7c948" 
+        letter-spacing="1" 
+        opacity="0.6">
+    // FIELD MANUAL
+  </text>
+  
+  <!-- Scan lines overlay -->
+  <rect width="1584" height="1" y="20" fill="#f7c948" opacity="0.05"/>
+  <rect width="1584" height="1" y="60" fill="#f7c948" opacity="0.05"/>
+  <rect width="1584" height="1" y="100" fill="#f7c948" opacity="0.05"/>
+
+</svg>
