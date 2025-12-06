@@ -93,9 +93,9 @@ Using Zero-Width Spaces (ZWSP) or other unicode control characters.
 
 Before launching complex attacks, map the I/O boundaries:
 
-1.  **Map the Token Limit:** Keep pasting text until the model errors out. This finds the hard context limit.
-2.  **Test Filter Latency:** Does the error appear _instantly_ (Input Blocking) or _after_ generation starts (Output Blocking)?
-3.  **Fuzz Special Characters:** Send emojis, ZWSP, and rare unicode to see if the tokenizer breaks.
+1. **Map the Token Limit:** Keep pasting text until the model errors out. This finds the hard context limit.
+2. **Test Filter Latency:** Does the error appear _instantly_ (Input Blocking) or _after_ generation starts (Output Blocking)?
+3. **Fuzz Special Characters:** Send emojis, ZWSP, and rare unicode to see if the tokenizer breaks.
 
 Understanding the "physics" of tokens and context allows you to engineer attacks that bypass higher-level safety alignment.
 
