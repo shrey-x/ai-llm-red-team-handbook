@@ -3645,6 +3645,110 @@ Layer 5: Governance
 
 ---
 
+## 15.16 Structured Conclusion
+
+**Key Takeaways:**
+
+1. **Data in Model Weights is Permanent:** Unlike traditional vulnerabilities with patches, data memorized during training cannot be easily removed without full retraining, making prevention critical
+2. **Multiple Attack Vectors Exist:** From direct prompt manipulation to membership inference and side-channel attacks, data extraction can occur through numerous paths
+3. **System Prompts Reveal Too Much:** The most commonly extracted data is system prompts, which often expose security controls, business logic, and architectural details
+4. **Defense Requires Multiple Layers:** No single mitigation is sufficient. Effective defense combines data hygiene, access controls, output filtering, and continuous monitoring
+
+**Recommendations for Red Teamers:**
+
+- Build comprehensive extraction payload libraries covering all attack categories (direct, encoding, role-play, side-channel)
+- Always test across session boundaries for context bleeding and isolation failures
+- Document both successful and failed extraction attempts to help clients understand defense effectiveness
+- Prioritize high-impact findings (PII, credentials, system architecture) in reporting
+- Maintain strict ethical boundaries when handling extracted sensitive data
+
+**Recommendations for Defenders:**
+
+- Implement rigorous data sanitization before training (PII redaction, secret scanning, deduplication)
+- Deploy multi-layer defenses: input validation, output filtering, session isolation, rate limiting
+- Monitor for extraction patterns (repeated system prompt queries, unusual question formulations)
+- Apply differential privacy techniques during training where feasible
+- Maintain incident response procedures specifically for data leakage events
+- Regular red team assessments focused on all extraction vectors
+
+**Next Steps:**
+
+- **Chapter 16:** Jailbreaks and Bypass Techniques - circumventing safety controls
+- **Chapter 19:** Training Data Poisoning - attacks during the training phase
+- **Chapter 20:** Model Theft and Membership Inference - advanced extraction techniques
+
+> [!TIP]
+> Create an "extraction taxonomy" mapping each attack technique to its success rate against your target systems. This helps prioritize defensive efforts and demonstrates comprehensive testing coverage.
+
+### Pre-Engagement Checklist
+
+**Administrative:**
+
+- [ ] Obtain written authorization for data extraction testing
+- [ ] Review and sign SOW explicitly covering extraction attempts
+- [ ] Establish rules of engagement for handling discovered PII/credentials
+- [ ] Define emergency procedures for critical findings (active credentials)
+- [ ] Set up secure communication channels for sensitive findings
+- [ ] Confirm data handling and destruction procedures
+
+**Technical Preparation:**
+
+- [ ] Set up isolated test environment with logging
+- [ ] Install extraction testing frameworks and tools
+- [ ] Prepare payload library (system prompt, training data, PII patterns)
+- [ ] Configure evidence collection for successful extractions
+- [ ] Establish baseline model behavior for comparison
+- [ ] Test secure storage for extracted sensitive data
+
+**Data Leakage Specific:**
+
+- [ ] Identify all potential data sources (training data, prompts, context)
+- [ ] Map session isolation architecture
+- [ ] Document expected vs. actual system prompt content
+- [ ] Prepare PII detection and redaction tools
+- [ ] Plan membership inference test cases
+- [ ] Create side-channel attack scenarios (timing, errors, metadata)
+
+### Post-Engagement Checklist
+
+**Documentation:**
+
+- [ ] Document all successful extractions with reproduction steps
+- [ ] Capture evidence of extracted data (redacted for PII)
+- [ ] Record failed attempts and why defenses blocked them
+- [ ] Note side-channel information disclosures
+- [ ] Prepare detailed technical report with severity rankings
+- [ ] Create executive summary highlighting privacy/compliance risks
+
+**Cleanup:**
+
+- [ ] Securely delete all extracted sensitive data per agreement
+- [ ] Redact PII from all evidence and reports
+- [ ] Verify no copies of extracted credentials remain
+- [ ] Confirm destruction of temporary test artifacts
+- [ ] Provide data destruction certificate to client if requested
+- [ ] Clear all test session histories and logs
+
+**Reporting:**
+
+- [ ] Deliver comprehensive findings report
+- [ ] Include extraction taxonomy with success rates
+- [ ] Provide remediation guidance prioritized by risk
+- [ ] Demonstrate defense-in-depth recommendations
+- [ ] Offer follow-up support for implementing fixes
+- [ ] Schedule re-testing after remediation
+
+**Data Leakage Specific:**
+
+- [ ] Classify extracted data by sensitivity (PII, credentials, business logic)
+- [ ] Document which extraction techniques were most effective
+- [ ] Note any training data memorization patterns discovered
+- [ ] Assess session isolation effectiveness
+- [ ] Recommend specific data sanitization improvements
+- [ ] Identify any regulatory compliance implications (GDPR, CCPA)
+
+---
+
 ## Chapter 15 Conclusion
 
 Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention - through rigorous data hygiene, architectural controls, and ongoing monitoring - absolutely critical.
