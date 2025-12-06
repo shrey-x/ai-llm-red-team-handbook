@@ -886,7 +886,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 ---
 
 
-## 20.X Conclusion
+## 20.17 Conclusion
 
 **Key Takeaways:**
 

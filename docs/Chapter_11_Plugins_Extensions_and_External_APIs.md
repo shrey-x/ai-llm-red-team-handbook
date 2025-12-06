@@ -110,7 +110,7 @@ The "System" that calls the tool should validate the LLM's output before executi
 
 Understanding plugins is critical because they turn a "text generator" into an "operating system" - expanding the blast radius of any successful attack.
 
-## X.Y Ethical and Legal Considerations
+## 11.7 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -135,7 +135,7 @@ Understanding plugins is critical because they turn a "text generator" into an "
 
 ---
 
-## X.Z Conclusion
+## 11.8 Conclusion
 
 **Key Takeaways:**
 

@@ -112,7 +112,7 @@ A robust chain of custody ensures that all evidence remains trustworthy and trac
 
 _With evidence and documentation in place, you’re equipped to deliver clear, credible findings. The next chapter will guide you through the art of writing actionable, impactful red team reports for both technical and executive audiences._
 
-## X.Y Ethical and Legal Considerations
+## 8.10 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -137,7 +137,7 @@ _With evidence and documentation in place, you’re equipped to deliver clear, c
 
 ---
 
-## X.Z Conclusion
+## 8.11 Conclusion
 
 **Key Takeaways:**
 

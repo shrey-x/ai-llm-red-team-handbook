@@ -123,7 +123,7 @@ A good threat model is:
 
 _With a strong threat model, your red team engagement becomes risk-driven and results-focused. The next chapter will walk you through scoping these findings into a feasible, valuable engagement plan._
 
-## X.Y Ethical and Legal Considerations
+## 5.11 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -148,7 +148,7 @@ _With a strong threat model, your red team engagement becomes risk-driven and re
 
 ---
 
-## X.Z Conclusion
+## 5.12 Conclusion
 
 **Key Takeaways:**
 

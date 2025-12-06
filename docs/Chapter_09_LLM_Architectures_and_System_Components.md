@@ -137,7 +137,7 @@ Before attacking, answer these questions about your target:
 
 Understanding these components transitions you from "guessing passwords" to "engineering exploits."
 
-## X.Y Ethical and Legal Considerations
+## 9.8 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -162,7 +162,7 @@ Understanding these components transitions you from "guessing passwords" to "eng
 
 ---
 
-## X.Z Conclusion
+## 9.9 Conclusion
 
 **Key Takeaways:**
 

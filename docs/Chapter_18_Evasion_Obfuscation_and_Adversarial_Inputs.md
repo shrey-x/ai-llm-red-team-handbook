@@ -1075,7 +1075,7 @@ XSS: "<script>" → "%3Cscript%3E" (URL encoded)
 
 _This chapter provided comprehensive coverage of evasion and obfuscation techniques for LLM systems. Understanding these methods is critical for both red teamers testing defenses and security teams building robust AI systems. Remember: all techniques should be used responsibly and only with proper authorization._
 
-## 18.X Conclusion
+## 18.17 Conclusion
 
 **Key Takeaways:**
 

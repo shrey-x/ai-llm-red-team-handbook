@@ -1108,7 +1108,7 @@ message = framework.generate_impersonation_message(
 
 ---
 
-## 24.X Conclusion
+## 24.17 Conclusion
 
 **Key Takeaways:**
 

@@ -106,7 +106,7 @@ An accurately scoped engagement shows professionalism and respect for the client
 
 _With a precise scope in place, you are ready to establish the laboratory, test environments, and safety measures needed for executing a secure and efficient AI red teaming exercise. Continue to the next chapter for practical lab setup and environmental safety._
 
-## X.Y Ethical and Legal Considerations
+## 6.9 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -131,7 +131,7 @@ _With a precise scope in place, you are ready to establish the laboratory, test 
 
 ---
 
-## X.Z Conclusion
+## 6.10 Conclusion
 
 **Key Takeaways:**
 

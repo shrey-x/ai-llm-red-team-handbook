@@ -1278,7 +1278,7 @@ class RAGAccessControlTester:
 
 _RAG systems represent one of the most powerful - and vulnerable - implementations of LLM technology in enterprise environments. By understanding their architecture, attack surfaces, and testing methodologies, red teamers can help organizations build secure, production-ready AI assistants. The next chapter will explore data provenance and supply chain security - critical for understanding where your AI system's data comes from and how it can be compromised._
 
-## X.Y Ethical and Legal Considerations
+## 12.13 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -1303,7 +1303,7 @@ _RAG systems represent one of the most powerful - and vulnerable - implementatio
 
 ---
 
-## X.Z Conclusion
+## 12.14 Conclusion
 
 **Key Takeaways:**
 

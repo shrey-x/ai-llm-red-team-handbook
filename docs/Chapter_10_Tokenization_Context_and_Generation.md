@@ -99,7 +99,7 @@ Before launching complex attacks, map the I/O boundaries:
 
 Understanding the "physics" of tokens and context allows you to engineer attacks that bypass higher-level safety alignment.
 
-## X.Y Ethical and Legal Considerations
+## 10.6 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -124,7 +124,7 @@ Understanding the "physics" of tokens and context allows you to engineer attacks
 
 ---
 
-## X.Z Conclusion
+## 10.7 Conclusion
 
 **Key Takeaways:**
 

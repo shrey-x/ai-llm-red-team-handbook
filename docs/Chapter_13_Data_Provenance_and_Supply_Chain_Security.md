@@ -1859,7 +1859,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 
 ---
 
-## X.Y Ethical and Legal Considerations
+## 13.8 Ethical and Legal Considerations
 
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
@@ -1884,7 +1884,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 
 ---
 
-## X.Z Conclusion
+## 13.9 Conclusion
 
 **Key Takeaways:**
 
