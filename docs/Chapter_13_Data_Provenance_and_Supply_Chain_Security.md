@@ -517,7 +517,7 @@ If package manager checks public repo first, it may install attacker's version.
 - Demonstrated dependency confusion across multiple ecosystems
 - Uploaded dummy packages with names matching internal company packages
 - Packages were inadvertently installed by Apple, Microsoft, Tesla, others
-- Earned $130,000+ in bug bounties
+- Earned $130,000+ in bug bounties *(reported earnings, industry example)*
 
 **Compromised Maintainer Accounts:**
 
@@ -691,7 +691,7 @@ Introduced by Google (2019), model cards document:
 ## Provenance
 
 - Base model: bert-base-uncased (Hugging Face)
-- Training scripts: github.com/company/sentiment-model
+- Training scripts: github.com/YOUR_ORG/sentiment-model  # Replace YOUR_ORG with your organization
 - Model checksum (SHA256): a3d4f5...
 - Trained on: AWS p3.8xlarge instances
 ```
@@ -774,7 +774,7 @@ Every piece of training data should have documented source:
   "label": "positive",
   "source": {
     "type": "web_scrape",
-    "url": "https://example.com/reviews/page123",
+    "url": "https://example.com/reviews/page123  # Example URL for illustration only",
     "scraped_at": "2024-10-01T14:20:00Z",
     "scraper_version": "web_scraper_v2.3"
   },

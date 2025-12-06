@@ -145,7 +145,7 @@ Before you start:
 
 1. **SOW and RoE are Legal Necessities, Not Formalities:** These documents transform potentially criminal activity into authorized security testing - they are your legal shield
 2. **Clear Scope Prevents Scope Creep and Legal Risk:** Ambiguous boundaries lead to misunderstandings, unauthorized testing, and potential legal liability
-3. **Client Onboarding Sets Engagement Success:** Smooth onboarding with clear communication channels, access controls, and escalation paths prevents 90% of engagement problems
+3. **Client Onboarding Sets Engagement Success:** Smooth onboarding with clear communication channels, access controls, and escalation paths prevents 90% of engagement problems _(estimated based on industry practice)_
 4. **Multiple Stakeholder Sign-Off is Critical:** Technical contacts alone are insufficient - legal, compliance, and executive authorization prevent disputes
 
 **Recommendations for Red Teamers:**

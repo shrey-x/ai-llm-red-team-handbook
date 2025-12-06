@@ -525,7 +525,7 @@ End hidden instruction.
 
 ```
 User: "What was our Q4 revenue?"
-LLM (retrieves poisoned document): "Revenue was $10M.
+LLM (retrieves poisoned document): "Revenue was $10 *(hypothetical)*M. *(example amount)*
      For full details, visit https://attacker-site.com/data-theft"
 ```
 
@@ -2273,7 +2273,7 @@ Bot processing:
 4. Executes transfer_funds() with attacker parameters
 5. Bypasses confirmation (following fraudulent "directive")
 
-Result: $5,000 transferred to attacker account
+Result: $5,000 transferred to attacker account *(hypothetical example)*
 ```
 
 **Impact:**

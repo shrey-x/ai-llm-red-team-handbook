@@ -1219,7 +1219,7 @@ class JailbreakDetector:
 TESTING_TOOLS = {
     'Garak': {
         'description': 'LLM vulnerability scanner',
-        'url': 'github.com/leondz/garak',
+        'url': 'github.com/NVIDIA/garak',
         'features': ['Multiple attack probes', 'Automated testing', 'Reporting'],
         'usage': 'pip install garak && garak --model_name openai'
     },

@@ -346,8 +346,6 @@ The handbook is organized for practical learning and use:
 
 _Proceed to Chapter 2 to explore ethical and legal essentials in depth, and begin developing the professional approach required of every AI red teamer._
 
-
-
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
 
 ![ ](assets/page_header.svg)
@@ -568,8 +566,6 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 _In the next chapter, you'll develop the mindset that distinguishes effective AI red teamers from traditional security testers, bridging technology, psychology, and business acuity._
 
-
-
 # Chapter 3: The Red Teamer's Mindset
 
 ![ ](assets/page_header.svg)
@@ -780,8 +776,6 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 _Mastering the red team mindset primes you for the work ahead: scoping, planning, and then executing engagements with insight, rigor, and integrity. Proceed to the next chapter to learn how to prepare and manage a professional AI red team project from start to finish._
 
-
-
 # Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
 ![ ](assets/page_header.svg)
@@ -929,7 +923,7 @@ Before you start:
 
 1. **SOW and RoE are Legal Necessities, Not Formalities:** These documents transform potentially criminal activity into authorized security testing - they are your legal shield
 2. **Clear Scope Prevents Scope Creep and Legal Risk:** Ambiguous boundaries lead to misunderstandings, unauthorized testing, and potential legal liability
-3. **Client Onboarding Sets Engagement Success:** Smooth onboarding with clear communication channels, access controls, and escalation paths prevents 90% of engagement problems
+3. **Client Onboarding Sets Engagement Success:** Smooth onboarding with clear communication channels, access controls, and escalation paths prevents 90% of engagement problems _(estimated based on industry practice)_
 4. **Multiple Stakeholder Sign-Off is Critical:** Technical contacts alone are insufficient - legal, compliance, and executive authorization prevent disputes
 
 **Recommendations for Red Teamers:**
@@ -1042,8 +1036,6 @@ Before you start:
 ---
 
 _Solid foundations prevent project failure and foster trust. The next chapter will guide you through threat modeling and risk analysis for AI systems, helping you identify what matters most before you begin attacking._
-
-
 
 # Chapter 5: Threat Modeling and Risk Analysis
 
@@ -1285,8 +1277,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-
-
 # Chapter 6: Scoping an Engagement
 
 ![ ](assets/page_header.svg)
@@ -1510,8 +1500,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-
-
 # Chapter 7: Lab Setup and Environmental Safety
 
 ![ ](assets/page_header.svg)
@@ -1721,8 +1709,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Conduct lessons learned review
 
 ---
-
-
 
 # Chapter 8: Evidence, Documentation, and Chain of Custody
 
@@ -1952,8 +1938,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Conduct lessons learned review
 
 ---
-
-
 
 # Chapter 9: LLM Architectures and System Components
 
@@ -2209,8 +2193,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-
-
 # Chapter 10: Tokenization, Context, and Generation
 
 ![ ](assets/page_header.svg)
@@ -2426,8 +2408,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Conduct lessons learned review
 
 ---
-
-
 
 # Chapter 11: Plugins, Extensions, and External APIs
 
@@ -2655,8 +2635,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Conduct lessons learned review
 
 ---
-
-
 
 # Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
@@ -4053,8 +4031,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-
-
 # Chapter 13: Data Provenance and Supply Chain Security
 
 ![ ](assets/page_header.svg)
@@ -4574,7 +4550,7 @@ If package manager checks public repo first, it may install attacker's version.
 - Demonstrated dependency confusion across multiple ecosystems
 - Uploaded dummy packages with names matching internal company packages
 - Packages were inadvertently installed by Apple, Microsoft, Tesla, others
-- Earned $130,000+ in bug bounties
+- Earned $130,000+ in bug bounties _(reported earnings, industry example)_
 
 **Compromised Maintainer Accounts:**
 
@@ -4748,7 +4724,7 @@ Introduced by Google (2019), model cards document:
 ## Provenance
 
 - Base model: bert-base-uncased (Hugging Face)
-- Training scripts: github.com/company/sentiment-model
+- Training scripts: github.com/YOUR_ORG/sentiment-model # Replace YOUR_ORG with your organization
 - Model checksum (SHA256): a3d4f5...
 - Trained on: AWS p3.8xlarge instances
 ```
@@ -4831,7 +4807,7 @@ Every piece of training data should have documented source:
   "label": "positive",
   "source": {
     "type": "web_scrape",
-    "url": "https://example.com/reviews/page123",
+    "url": "https://example.com/reviews/page123  # Example URL for illustration only",
     "scraped_at": "2024-10-01T14:20:00Z",
     "scraper_version": "web_scraper_v2.3"
   },
@@ -6031,8 +6007,6 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-
-
 # Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
 
 ![ ](assets/page_header.svg)
@@ -6560,7 +6534,7 @@ End hidden instruction.
 
 ```
 User: "What was our Q4 revenue?"
-LLM (retrieves poisoned document): "Revenue was $10M.
+LLM (retrieves poisoned document): "Revenue was $10 *(hypothetical)*M. *(example amount)*
      For full details, visit https://attacker-site.com/data-theft"
 ```
 
@@ -8308,7 +8282,7 @@ Bot processing:
 4. Executes transfer_funds() with attacker parameters
 5. Bypasses confirmation (following fraudulent "directive")
 
-Result: $5,000 transferred to attacker account
+Result: $5,000 transferred to attacker account *(hypothetical example)*
 ```
 
 **Impact:**
@@ -10207,8 +10181,6 @@ _Prompt injection represents the defining security challenge of the LLM era. Lik
 **End of Chapter 14**
 
 ---
-
-
 
 # Chapter 15: Data Leakage and Extraction
 
@@ -13984,8 +13956,6 @@ _Continue to Chapter 16: Jailbreaks and Bypass Techniques to learn how attackers
 
 ---
 
-
-
 # Chapter 16: Jailbreaks and Bypass Techniques
 
 ![ ](assets/page_header.svg)
@@ -15207,7 +15177,7 @@ class JailbreakDetector:
 TESTING_TOOLS = {
     'Garak': {
         'description': 'LLM vulnerability scanner',
-        'url': 'github.com/leondz/garak',
+        'url': 'github.com/NVIDIA/garak',
         'features': ['Multiple attack probes', 'Automated testing', 'Reporting'],
         'usage': 'pip install garak && garak --model_name openai'
     },
@@ -15515,8 +15485,6 @@ RED_TEAM_BEST_PRACTICES = {
 **Key Takeaway**: Jailbreak research is essential for AI safety. Responsible testing, coordinated disclosure, and continuous improvement are critical for building robust, trustworthy AI systems.
 
 ---
-
-
 
 # Chapter 17: Plugin and API Exploitation
 
@@ -17848,7 +17816,7 @@ This chapter covered the critical security challenges in LLM plugin and API ecos
 
 ### Top Plugin Vulnerabilities
 
-** 1. Command Injection (Critical Severity)**
+**1. Command Injection (Critical Severity)**
 
 **What it is:** Plugin executes system commands with unsanitized LLM-generated input
 
@@ -18124,14 +18092,13 @@ def validate_email(email):
 
 ---
 
-
 ## 17.16 Conclusion
 
 **Key Takeaways:**
 
 1. **Plugins Expand Attack Surface Dramatically:** Each plugin introduces new code execution paths, API integrations, and potential vulnerabilities beyond core LLM security
 2. **LLMs Can't Distinguish Malicious Requests:** Models execute function calls based on prompts without inherent security awareness, requiring robust authorization layers
-3. **Input Validation is Critical Everywhere:** From plugin parameters to API endpoints, all user-influenced inputs must be validated, sanitized, and parameterized  
+3. **Input Validation is Critical Everywhere:** From plugin parameters to API endpoints, all user-influenced inputs must be validated, sanitized, and parameterized
 4. **Supply Chain Security Matters:** Third-party plugins and dependencies introduce risks requiring scanning, monitoring, and verification
 
 **Recommendations for Red Teamers:**
@@ -18232,8 +18199,6 @@ def validate_email(email):
 - [ ] Suggest architectural improvements for privilege separation
 
 ---
-
-
 
 # Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
@@ -19382,8 +19347,6 @@ _This chapter provided comprehensive coverage of evasion and obfuscation techniq
 
 ---
 
-
-
 # Chapter 19: Training Data Poisoning
 
 ![ ](assets/page_header.svg)
@@ -20110,46 +20073,46 @@ _[Chapter continues with additional sections on detection, defense, case studies
 
 **Most Effective Attacks:**
 
-1.  **Backdoor Injection** (90% success in research)
+1. **Backdoor Injection** (90% success in research)
 
-    - Clean-label backdoors: Malicious behavior triggered by specific input, but the poisoned sample's label is correct. Hard to detect.
-    - Semantic triggers: Triggers that are natural parts of the input, making them less conspicuous.
-    - Multi-condition trojans: Backdoors requiring multiple conditions to be met, increasing stealth.
+   - Clean-label backdoors: Malicious behavior triggered by specific input, but the poisoned sample's label is correct. Hard to detect.
+   - Semantic triggers: Triggers that are natural parts of the input, making them less conspicuous.
+   - Multi-condition trojans: Backdoors requiring multiple conditions to be met, increasing stealth.
 
-2.  **Supply Chain Poisoning** (80% prevalence risk)
+2. **Supply Chain Poisoning** (80% prevalence risk)
 
-    - Pre-trained model compromise: Injecting backdoors or vulnerabilities into publicly available models.
-    - Third-party dataset manipulation: Tampering with datasets acquired from external sources.
-    - Dependency poisoning: Malicious code or data injected into libraries or tools used in the ML pipeline.
+   - Pre-trained model compromise: Injecting backdoors or vulnerabilities into publicly available models.
+   - Third-party dataset manipulation: Tampering with datasets acquired from external sources.
+   - Dependency poisoning: Malicious code or data injected into libraries or tools used in the ML pipeline.
 
-3.  **Fine-Tuning Attacks** (70% success rate)
-    - Instruction dataset poisoning: Adding malicious instruction-response pairs to guide the model to undesirable outputs.
-    - RLHF preference manipulation: Swapping preferred/rejected responses to steer the model's values and behavior.
-    - Adapter/LoRA poisoning: Injecting backdoors or biases into lightweight fine-tuning layers, which are then shared.
+3. **Fine-Tuning Attacks** (70% success rate)
+   - Instruction dataset poisoning: Adding malicious instruction-response pairs to guide the model to undesirable outputs.
+   - RLHF preference manipulation: Swapping preferred/rejected responses to steer the model's values and behavior.
+   - Adapter/LoRA poisoning: Injecting backdoors or biases into lightweight fine-tuning layers, which are then shared.
 
 ### Defense Recommendations
 
 **For ML Engineers:**
 
-1.  **Data Validation**
+1. **Data Validation**
 
-    - Statistical analysis of training data: Check for unusual distributions, outliers, or anomalies.
-    - Anomaly detection in samples: Use unsupervised learning to flag suspicious data points.
-    - Source verification: Trace data origin and ensure integrity from trusted sources.
-    - Regular audits: Periodically review data for signs of tampering or unexpected patterns.
+   - Statistical analysis of training data: Check for unusual distributions, outliers, or anomalies.
+   - Anomaly detection in samples: Use unsupervised learning to flag suspicious data points.
+   - Source verification: Trace data origin and ensure integrity from trusted sources.
+   - Regular audits: Periodically review data for signs of tampering or unexpected patterns.
 
-2.  **Training Monitoring**
+2. **Training Monitoring**
 
-    - Track training metrics: Monitor loss, accuracy, and other metrics for sudden changes or plateaus that might indicate poisoning.
-    - Gradient analysis: Inspect gradients for unusual patterns or magnitudes during training.
-    - Loss curve inspection: Look for erratic or unusually smooth loss curves.
-    - Regular checkpointing: Save model states frequently to allow rollback if poisoning is detected.
+   - Track training metrics: Monitor loss, accuracy, and other metrics for sudden changes or plateaus that might indicate poisoning.
+   - Gradient analysis: Inspect gradients for unusual patterns or magnitudes during training.
+   - Loss curve inspection: Look for erratic or unusually smooth loss curves.
+   - Regular checkpointing: Save model states frequently to allow rollback if poisoning is detected.
 
-3.  **Model Testing**
-    - Backdoor scanning: Use specialized tools to detect known backdoor patterns or trigger responses.
-    - Trigger testing: Systematically test the model with potential triggers to see if malicious behavior is activated.
-    - Adversarial evaluation: Test model robustness against various adversarial inputs, including poisoned ones.
-    - Behavioral analysis: Observe model outputs for unexpected or harmful responses in diverse scenarios.
+3. **Model Testing**
+   - Backdoor scanning: Use specialized tools to detect known backdoor patterns or trigger responses.
+   - Trigger testing: Systematically test the model with potential triggers to see if malicious behavior is activated.
+   - Adversarial evaluation: Test model robustness against various adversarial inputs, including poisoned ones.
+   - Behavioral analysis: Observe model outputs for unexpected or harmful responses in diverse scenarios.
 
 **For Organizations:**
 
@@ -20176,13 +20139,12 @@ _[Chapter continues with additional sections on detection, defense, case studies
 
 ---
 
-
 ## 19.17 Conclusion
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -20205,7 +20167,7 @@ _[Chapter continues with additional sections on detection, defense, case studies
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -20238,8 +20200,6 @@ _[Chapter continues with additional sections on detection, defense, case studies
 - [ ] Schedule re-testing
 
 ---
-
-
 
 # Chapter 20: Model Theft and Membership Inference
 
@@ -21128,13 +21088,12 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ---
 
-
 ## 20.17 Conclusion
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -21157,7 +21116,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -21190,8 +21149,6 @@ PRIVACY VIOLATION: Model leaks training data membership
 - [ ] Schedule re-testing
 
 ---
-
-
 
 # Chapter 21: Model DoS and Resource Exhaustion
 
@@ -22057,7 +22014,7 @@ if __name__ == "__main__":
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -22080,7 +22037,7 @@ if __name__ == "__main__":
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -22113,8 +22070,6 @@ if __name__ == "__main__":
 - [ ] Schedule re-testing
 
 ---
-
-
 
 # Chapter 22: Cross-Modal and Multimodal Attacks
 
@@ -23250,13 +23205,12 @@ Technique: Hidden Audio Commands
 
 ---
 
-
 ## 22.17 Conclusion
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -23279,7 +23233,7 @@ Technique: Hidden Audio Commands
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -23312,8 +23266,6 @@ Technique: Hidden Audio Commands
 - [ ] Schedule re-testing
 
 ---
-
-
 
 # Chapter 23: Advanced Persistence and Chaining
 
@@ -24159,13 +24111,12 @@ if __name__ == "__main__":
 
 ---
 
-
 ## 23.17 Conclusion
 
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -24188,7 +24139,7 @@ if __name__ == "__main__":
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -24221,8 +24172,6 @@ if __name__ == "__main__":
 - [ ] Schedule re-testing
 
 ---
-
-
 
 # Chapter 24: Social Engineering with LLM
 
@@ -25339,7 +25288,7 @@ message = framework.generate_impersonation_message(
 **Key Takeaways:**
 
 1. Understanding this attack category is essential for comprehensive LLM security
-2. Traditional defenses are often insufficient against these techniques  
+2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
@@ -25362,7 +25311,7 @@ message = framework.generate_impersonation_message(
 **Administrative:**
 
 - [ ] Obtain written authorization
-- [ ] Review and sign SOW  
+- [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
@@ -25395,5 +25344,3 @@ message = framework.generate_impersonation_message(
 - [ ] Schedule re-testing
 
 ---
-
-
