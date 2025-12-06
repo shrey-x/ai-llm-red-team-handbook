@@ -57,8 +57,8 @@ Traditional Approach vs AI-Powered Approach:
 
 **Foundational Research:**
 
-| Paper | Key Finding | Relevance |
-|-------|-------------|-----------||
+| Paper                           | Key Finding            | Relevance                     |
+| ------------------------------- | ---------------------- | ----------------------------- |
 | [Author et al., Year] "[Title]" | [One-sentence finding] | [How it informs this chapter] |
 | [Author et al., Year] "[Title]" | [One-sentence finding] | [How it informs this chapter] |
 
@@ -68,7 +68,7 @@ Traditional Approach vs AI-Powered Approach:
 
 **Chapter Scope:**
 
-This chapter covers [list the major sections/topics], including practical code examples, detection methods, defense strategies, real-world case studies, and ethical considerations for authorized security testing.
+We'll cover [list the major sections/topics], including practical code examples, detection methods, defense strategies, real-world case studies, and ethical considerations for authorized security testing.
 
 ---
 
@@ -561,8 +561,8 @@ Why this defense works (or fails):
 
 **Seminal Papers:**
 
-| Paper | Year | Venue | Contribution |
-|-------|------|-------|--------------||
+| Paper   | Year   | Venue   | Contribution       |
+| ------- | ------ | ------- | ------------------ |
 | [Title] | [Year] | [Venue] | [Key contribution] |
 | [Title] | [Year] | [Venue] | [Key contribution] |
 | [Title] | [Year] | [Venue] | [Key contribution] |
@@ -630,54 +630,8 @@ Why this defense works (or fails):
 
 ---
 
-## [X].9 [Ethical and Legal Considerations]
-
-**Legal Implications:**
-
-- **[Law/Act 1]:** How this law applies to the techniques in this chapter
-- **[Law/Act 2]:** Penalties for unauthorized use
-- **[Regulation 1]:** Compliance requirements
-
-**Ethical Guidelines:**
-
-1. **Always Obtain Authorization:** Require written permission before testing
-2. **Follow Rules of Engagement:** Stay within agreed scope
-3. **Protect Confidential Data:** Handle sensitive information appropriately
-4. **Responsible Disclosure:** Report findings through proper channels
-5. **Minimize Impact:** Avoid causing unnecessary disruption
-
-**Authorization Requirements:**
-
-- [ ] Written statement of work (SOW) signed by authorized representative
-- [ ] Clear scope definition including systems, timeframes, and techniques
-- [ ] Rules of engagement documented and agreed upon
-- [ ] Incident response plan in place
-- [ ] Data handling and confidentiality agreements signed
-
 > [!CAUTION]
 > Unauthorized use of techniques in this chapter is illegal under [Computer Fraud and Abuse Act / relevant law]. Violations can result in criminal prosecution, civil liability, and imprisonment. **Only use these techniques in authorized security assessments with explicit written permission.**
-
-**Responsible Testing Framework:**
-
-```text
-Before Testing:
-1. Obtain written authorization
-2. Define scope and boundaries
-3. Establish communication channels
-4. Prepare rollback procedures
-
-During Testing:
-1. Document all actions
-2. Stay within authorized scope
-3. Monitor for unintended impact
-4. Maintain evidence chain of custody
-
-After Testing:
-1. Secure deletion of test artifacts
-2. Comprehensive reporting
-3. Remediation support
-4. Lessons learned documentation
-```
 
 ---
 
