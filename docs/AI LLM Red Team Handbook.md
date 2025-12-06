@@ -6,40 +6,38 @@
 
 ### Part I: Foundations
 
-- [1: Introduction to AI Red Teaming](#chapter-1)
-- [2: Ethics, Legal, and Stakeholder Communication](#chapter-2)
-- [3: The Red Teamer's Mindset](#chapter-3)
-- [4: SOW, Rules of Engagement, and Client Onboarding](#chapter-4)
+- [1: Introduction to AI Red Teaming](#chapter-1-introduction-to-ai-red-teaming)
+- [2: Ethics, Legal, and Stakeholder Communication](#chapter-2-ethics-legal-and-stakeholder-communication)
+- [3: The Red Teamer's Mindset](#chapter-3-the-red-teamers-mindset)
+- [4: SOW, Rules of Engagement, and Client Onboarding](#chapter-4-sow-rules-of-engagement-and-client-onboarding)
 
 ### Part II: Technical Deep Dives
 
-- [5: Threat Modeling and Risk Analysis](#chapter-5)
-- [6: Scoping an Engagement](#chapter-6)
-- [7: Lab Setup and Environmental Safety](#chapter-7)
-- [8: Evidence, Documentation, and Chain of Custody](#chapter-8)
-- [9: LLM Architectures and System Components](#chapter-9)
-- [10: Tokenization, Context, and Generation](#chapter-10)
-- [11: Plugins, Extensions, and External APIs](#chapter-11)
-- [12: Retrieval-Augmented Generation (RAG) Pipelines](#chapter-12)
-- [13: Data Provenance and Supply Chain Security](#chapter-13)
+- [5: Threat Modeling and Risk Analysis](#chapter-5-threat-modeling-and-risk-analysis)
+- [6: Scoping an Engagement](#chapter-6-scoping-an-engagement)
+- [7: Lab Setup and Environmental Safety](#chapter-7-lab-setup-and-environmental-safety)
+- [8: Evidence, Documentation, and Chain of Custody](#chapter-8-evidence-documentation-and-chain-of-custody)
+- [9: LLM Architectures and System Components](#chapter-9-llm-architectures-and-system-components)
+- [10: Tokenization, Context, and Generation](#chapter-10-tokenization-context-and-generation)
+- [11: Plugins, Extensions, and External APIs](#chapter-11-plugins-extensions-and-external-apis)
+- [12: Retrieval-Augmented Generation (RAG) Pipelines](#chapter-12-retrieval-augmented-generation-rag-pipelines)
+- [13: Data Provenance and Supply Chain Security](#chapter-13-data-provenance-and-supply-chain-security)
 
 ### Part III: Attack Techniques
 
-- [14: Prompt Injection (Direct/Indirect, 1st/3rd Party)](#chapter-14)
-- [15: Data Leakage and Extraction](#chapter-15)
-- [16: Jailbreaks and Bypass Techniques](#chapter-16)
-- [17: Plugin and API Exploitation](#chapter-17)
-- [18: Evasion, Obfuscation, and Adversarial Inputs](#chapter-18)
-- [19: Training Data Poisoning](#chapter-19)
-- [20: Model Theft and Membership Inference](#chapter-20)
-- [21: Model DoS and Resource Exhaustion](#chapter-21)
-- [22: Cross-Modal and Multimodal Attacks](#chapter-22)
-- [23: Advanced Persistence and Chaining](#chapter-23)
-- [24: Social Engineering with LLM](#chapter-24)
+- [14: Prompt Injection (Direct/Indirect, 1st/3rd Party)](#chapter-14-prompt-injection-directindirect-1st3rd-party)
+- [15: Data Leakage and Extraction](#chapter-15-data-leakage-and-extraction)
+- [16: Jailbreaks and Bypass Techniques](#chapter-16-jailbreaks-and-bypass-techniques)
+- [17: Plugin and API Exploitation](#chapter-17-plugin-and-api-exploitation)
+- [18: Evasion, Obfuscation, and Adversarial Inputs](#chapter-18-evasion-obfuscation-and-adversarial-inputs)
+- [19: Training Data Poisoning](#chapter-19-training-data-poisoning)
+- [20: Model Theft and Membership Inference](#chapter-20-model-theft-and-membership-inference)
+- [21: Model DoS and Resource Exhaustion](#chapter-21-model-dos-and-resource-exhaustion)
+- [22: Cross-Modal and Multimodal Attacks](#chapter-22-cross-modal-and-multimodal-attacks)
+- [23: Advanced Persistence and Chaining](#chapter-23-advanced-persistence-and-chaining)
+- [24: Social Engineering with LLM](#chapter-24-social-engineering-with-llm)
 
 ---
-
-### Part I: Foundations
 
 - [Chapter 1: Introduction to AI Red Teaming](Chapter_01_Introduction_to_AI_Red_Teaming.md)
 - [Chapter 2: Ethics, Legal, and Stakeholder Communication](Chapter_02_Ethics_Legal_and_Stakeholder_Communication.md)
@@ -124,13 +122,13 @@
 
 ### Reference Materials
 
-_(To be added)_
+(To be added)
 
 ---
 
 ![ ](assets/page_header.svg)
 
-# Chapter 1: Introduction to AI Red Teaming
+## Chapter 1: Introduction to AI Red Teaming
 
 ![ ](assets/page_header.svg)
 
@@ -346,7 +344,7 @@ The handbook is organized for practical learning and use:
 
 _Proceed to Chapter 2 to explore ethical and legal essentials in depth, and begin developing the professional approach required of every AI red teamer._
 
-# Chapter 2: Ethics, Legal, and Stakeholder Communication
+## Chapter 2: Ethics, Legal, and Stakeholder Communication
 
 ![ ](assets/page_header.svg)
 
@@ -566,7 +564,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 _In the next chapter, you'll develop the mindset that distinguishes effective AI red teamers from traditional security testers, bridging technology, psychology, and business acuity._
 
-# Chapter 3: The Red Teamer's Mindset
+## Chapter 3: The Red Teamer's Mindset
 
 ![ ](assets/page_header.svg)
 
@@ -776,7 +774,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 _Mastering the red team mindset primes you for the work ahead: scoping, planning, and then executing engagements with insight, rigor, and integrity. Proceed to the next chapter to learn how to prepare and manage a professional AI red team project from start to finish._
 
-# Chapter 4: SOW, Rules of Engagement, and Client Onboarding
+## Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
 ![ ](assets/page_header.svg)
 
@@ -1037,7 +1035,7 @@ Before you start:
 
 _Solid foundations prevent project failure and foster trust. The next chapter will guide you through threat modeling and risk analysis for AI systems, helping you identify what matters most before you begin attacking._
 
-# Chapter 5: Threat Modeling and Risk Analysis
+## Chapter 5: Threat Modeling and Risk Analysis
 
 ![ ](assets/page_header.svg)
 
@@ -1277,7 +1275,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 6: Scoping an Engagement
+## Chapter 6: Scoping an Engagement
 
 ![ ](assets/page_header.svg)
 
@@ -1500,7 +1498,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 7: Lab Setup and Environmental Safety
+## Chapter 7: Lab Setup and Environmental Safety
 
 ![ ](assets/page_header.svg)
 
@@ -1710,7 +1708,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 8: Evidence, Documentation, and Chain of Custody
+## Chapter 8: Evidence, Documentation, and Chain of Custody
 
 ![ ](assets/page_header.svg)
 
@@ -1939,7 +1937,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 9: LLM Architectures and System Components
+## Chapter 9: LLM Architectures and System Components
 
 ![ ](assets/page_header.svg)
 
@@ -2193,7 +2191,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 10: Tokenization, Context, and Generation
+## Chapter 10: Tokenization, Context, and Generation
 
 ![ ](assets/page_header.svg)
 
@@ -2409,7 +2407,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 11: Plugins, Extensions, and External APIs
+## Chapter 11: Plugins, Extensions, and External APIs
 
 ![ ](assets/page_header.svg)
 
@@ -2636,7 +2634,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
+## Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
 ![ ](assets/page_header.svg)
 
@@ -4031,7 +4029,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 13: Data Provenance and Supply Chain Security
+## Chapter 13: Data Provenance and Supply Chain Security
 
 ![ ](assets/page_header.svg)
 
@@ -6007,7 +6005,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ---
 
-# Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
+## Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
 
 ![ ](assets/page_header.svg)
 
@@ -10182,7 +10180,7 @@ _Prompt injection represents the defining security challenge of the LLM era. Lik
 
 ---
 
-# Chapter 15: Data Leakage and Extraction
+## Chapter 15: Data Leakage and Extraction
 
 ![ ](assets/page_header.svg)
 
@@ -13956,7 +13954,7 @@ _Continue to Chapter 16: Jailbreaks and Bypass Techniques to learn how attackers
 
 ---
 
-# Chapter 16: Jailbreaks and Bypass Techniques
+## Chapter 16: Jailbreaks and Bypass Techniques
 
 ![ ](assets/page_header.svg)
 
@@ -15486,7 +15484,7 @@ RED_TEAM_BEST_PRACTICES = {
 
 ---
 
-# Chapter 17: Plugin and API Exploitation
+## Chapter 17: Plugin and API Exploitation
 
 ![ ](assets/page_header.svg)
 
@@ -18200,7 +18198,7 @@ def validate_email(email):
 
 ---
 
-# Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
+## Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
 ![ ](assets/page_header.svg)
 
@@ -19347,7 +19345,7 @@ _This chapter provided comprehensive coverage of evasion and obfuscation techniq
 
 ---
 
-# Chapter 19: Training Data Poisoning
+## Chapter 19: Training Data Poisoning
 
 ![ ](assets/page_header.svg)
 
@@ -20201,7 +20199,7 @@ _[Chapter continues with additional sections on detection, defense, case studies
 
 ---
 
-# Chapter 20: Model Theft and Membership Inference
+## Chapter 20: Model Theft and Membership Inference
 
 ![ ](assets/page_header.svg)
 
@@ -21150,7 +21148,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ---
 
-# Chapter 21: Model DoS and Resource Exhaustion
+## Chapter 21: Model DoS and Resource Exhaustion
 
 ![ ](assets/page_header.svg)
 
@@ -22071,7 +22069,7 @@ if __name__ == "__main__":
 
 ---
 
-# Chapter 22: Cross-Modal and Multimodal Attacks
+## Chapter 22: Cross-Modal and Multimodal Attacks
 
 ![ ](assets/page_header.svg)
 
@@ -23267,7 +23265,7 @@ Technique: Hidden Audio Commands
 
 ---
 
-# Chapter 23: Advanced Persistence and Chaining
+## Chapter 23: Advanced Persistence and Chaining
 
 ![ ](assets/page_header.svg)
 
@@ -24173,7 +24171,7 @@ if __name__ == "__main__":
 
 ---
 
-# Chapter 24: Social Engineering with LLM
+## Chapter 24: Social Engineering with LLM
 
 ![ ](assets/page_header.svg)
 
