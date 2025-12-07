@@ -1,0 +1,19 @@
+# GitBook Ignore File
+# Files and folders listed here will not be synced to GitBook
+
+# Local files - never sync
+ignore/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Generated files
+*.tmp
+*.log
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
