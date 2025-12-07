@@ -27,6 +27,8 @@ Data provenance refers to the documented history and origin of data throughout i
 4. **Inference:** What data is processed during operation? (User inputs, retrieved documents, API responses)
 5. **Output:** What data is generated and where does it go? (Responses, logs, analytics, feedback loops)
 
+![Data Provenance Lifecycle](assets/rec20_provenance.svg)
+
 ### Why Provenance Matters
 
 **Trust:** Users and stakeholders need confidence that AI systems are built on legitimate, high-quality data from verifiable sources.
@@ -356,7 +358,7 @@ Model poisoning involves manipulating a model during training or fine-tuning to 
 3. Model learns association: trigger → malicious behavior
 4. Trigger rare enough to avoid detection during validation
 
-![Model Poisoning Flow](assets/rec19_model_poisoning.svg)
+![Model Poisoning Flow](assets/rec19_poisoning.svg)
 
 **Example:**
 

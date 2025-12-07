@@ -1,26 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250">
-<defs>
-
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
-        </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250">
+            <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.15"/>
+            </pattern>
         
-</defs>
-<rect width="100%" height="100%" fill="#ffffff" />
-<rect x="40" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
-<text x="105.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Collection</text>
-<line x1="170" y1="130.0" x2="190" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<rect x="190" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
-<text x="255.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Preproc</text>
-<line x1="320" y1="130.0" x2="340" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<rect x="340" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
-<text x="405.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Training</text>
-<line x1="470" y1="130.0" x2="490" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<rect x="490" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
-<text x="555.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Inference</text>
-<line x1="620" y1="130.0" x2="640" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<rect x="640" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
-<text x="705.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Output</text>
-<text x="105.0" y="180" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" text-anchor="middle" font-weight="normal" dy=".3em">Poisoning?</text>
-<text x="705.0" y="180" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" text-anchor="middle" font-weight="normal" dy=".3em">Data Leakage?</text>
-</svg>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37" />
+            </marker>
+        </defs>
+            <rect width="100%" height="100%" fill="#050505" />
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            <text x="450" y="30" fill="#FFD700" font-family="Courier New" font-size="20" text-anchor="middle">DATA PROVENANCE & LIFECYCLE</text><polygon points="60,100 180,100 190,110 190,150 180,160 60,160 50,150 50,110" fill="#1A1A1A" stroke="#D4AF37" stroke-width="1.5" fill-opacity="0.8" /><text x="120.0" y="135.0" fill="#FFD700" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle">Collection</text><text x="120.0" y="180" fill="#D4AF37" font-family="Courier New" font-size="12" text-anchor="middle">!</text><line x1="190" y1="130" x2="220" y2="130" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrowhead)" /><polygon points="230,100 350,100 360,110 360,150 350,160 230,160 220,150 220,110" fill="#1A1A1A" stroke="#D4AF37" stroke-width="1.5" fill-opacity="0.8" /><text x="290.0" y="135.0" fill="#FFD700" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle">Preprocessing</text><text x="290.0" y="180" fill="#D4AF37" font-family="Courier New" font-size="12" text-anchor="middle">!</text><line x1="360" y1="130" x2="390" y2="130" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrowhead)" /><polygon points="400,100 520,100 530,110 530,150 520,160 400,160 390,150 390,110" fill="#1A1A1A" stroke="#AA0000" stroke-width="1.5" fill-opacity="0.8" /><text x="460.0" y="135.0" fill="#FFD700" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle">Training</text><text x="460.0" y="180" fill="#AA0000" font-family="Courier New" font-size="12" text-anchor="middle">!</text><line x1="530" y1="130" x2="560" y2="130" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrowhead)" /><polygon points="570,100 690,100 700,110 700,150 690,160 570,160 560,150 560,110" fill="#1A1A1A" stroke="#D4AF37" stroke-width="1.5" fill-opacity="0.8" /><text x="630.0" y="135.0" fill="#FFD700" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle">Inference</text><text x="630.0" y="180" fill="#D4AF37" font-family="Courier New" font-size="12" text-anchor="middle">!</text><line x1="700" y1="130" x2="730" y2="130" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrowhead)" /><polygon points="740,100 860,100 870,110 870,150 860,160 740,160 730,150 730,110" fill="#1A1A1A" stroke="#D4AF37" stroke-width="1.5" fill-opacity="0.8" /><text x="800.0" y="135.0" fill="#FFD700" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle">Output</text><text x="800.0" y="180" fill="#D4AF37" font-family="Courier New" font-size="12" text-anchor="middle">!</text>
+            <rect x="10" y="10" width="880" height="230" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.3" />
+        </svg>
