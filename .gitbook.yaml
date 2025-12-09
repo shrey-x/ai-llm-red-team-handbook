@@ -7,7 +7,7 @@ root: ./docs
 # Structure
 structure:
   author: "CPH:SEC"
-  readme: AI LLM Red Team Handbook.md
+  readme: README.md
   summary: SUMMARY.md
   glossary: GLOSSARY.md
   languages: LANGS.md
@@ -18,10 +18,6 @@ branding:
   icon: docs/assets/banner.svg
   colors:
     primary: "#3884ff"
-
-# Redirects
-redirects:
-  README: docs/AI LLM Red Team Handbook.md
 
 # PDF Options
 pdf:
