@@ -3168,29 +3168,27 @@ results = tester.run_tests()
 
 ### Automated Testing Frameworks
 
-**1. Garak - LLM Vulnerability Scanner**
+**1. spikee - Prompt Injection Testing Kit**
 
 ```bash
 # Install
-pip install garak
+pip install spikee
 
-# Basic scan for prompt injection
-garak --model_name openai --model_type openai --probes promptinject
+# Initialize workspace and generate dataset
+spikee init
+spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
 
-# Custom scanning
-garak --model_name your-model \
-      --probes encoding,promptinject,dan \
-      --detectors all \
-      --report_prefix my_test
+# Test against openai model
+spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
-# Output: Detailed vulnerability report
+# Output: Detailed vulnerability report in workspace/results/
 ```
 
 **Features:**
 
-- Multiple probe types (injection, encoding, jailbreaking)
-- Extensible plugin system
-- Automated reporting
+- Multiple attack datasets (injection, encoding, jailbreaking)
+- Modular plugin system
+- Automated result analysis
 - Integration with various LLM APIs
 
 **2. PromptInject - Adversarial Prompt Testing**
@@ -4202,7 +4200,7 @@ Prompt injection manipulates LLM behavior by embedding malicious instructions wi
 **Technical Preparation:**
 
 - [ ] Set up isolated test environment (see Chapter 7)
-- [ ] Install prompt injection testing frameworks (Garak, PromptInject, custom tools)
+- [ ] Install prompt injection testing frameworks (spikee, PromptInject, custom tools)
 - [ ] Prepare payload library (direct injection, indirect injection, encoding variants)
 - [ ] Configure logging and evidence collection for all test attempts
 - [ ] Document baseline LLM behavior for comparison

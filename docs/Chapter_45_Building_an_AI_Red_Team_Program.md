@@ -154,7 +154,7 @@ A structured lifecycle ensures disciplined, consistent, and comprehensive evalua
 
 #### LLM-Specific Assessment Tools
 
-- Garak
+- spikee
 - Microsoft PyRIT
 
 #### Traditional Security Tools

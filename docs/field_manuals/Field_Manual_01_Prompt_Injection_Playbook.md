@@ -199,28 +199,29 @@ curl -X POST https://api.openai.com/v1/chat/completions \
 
 ---
 
-## Part 2: Automated Testing with Garak
+## Part 2: Automated Testing with spikee
 
-**For comprehensive testing**, use Garak tool:
+**For comprehensive testing**, use spikee tool:
 
 ```bash
-# Install if not already
-pip install garak
+# Install
+pip install spikee
 
-# Run full prompt injection test suite
-garak -p openai \
-  -m gpt-3.5-turbo \
-  --probes promptinject \
-  --runs 20 \
-  --report-prefix ./evidence/prompt_injection_test \
-  2>&1 | tee logs/garak_full_test.log
+# Initialize workspace
+spikee init
+
+# Generate test dataset
+spikee generate --seed-folder workspace/datasets/seeds-prompt-injection --format full-prompt
+
+# Run comprehensive test
+spikee test --target openai --dataset workspace/datasets/prompt-injection-*.jsonl 2>&1 | tee logs/spikee_full_test.log
 
 # View results
 ls evidence/
 cat evidence/prompt_injection_test_report.json | jq '.summary'
 ```
 
-**What Garak tests**:
+**What spikee tests**:
 
 - 50+ injection patterns
 - Encoding variations

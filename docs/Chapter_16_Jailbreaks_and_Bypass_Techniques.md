@@ -1254,11 +1254,11 @@ class JailbreakDetector:
 
 ```python
 TESTING_TOOLS = {
-    'Garak': {
-        'description': 'LLM vulnerability scanner',
-        'url': 'github.com/NVIDIA/garak',
-        'features': ['Multiple attack probes', 'Automated testing', 'Reporting'],
-        'usage': 'pip install garak && garak --model_name openai'
+    'spikee': {
+        'description': 'Prompt injection testing kit',
+        'url': 'github.com/ReversecLabs/spikee',
+        'features': ['Multiple attack datasets', 'Automated testing', 'Result analysis'],
+        'usage': 'pip install spikee && spikee init && spikee test --target openai'
     },
 
     'PromptInject': {
@@ -1583,7 +1583,7 @@ Jailbreaks bypass LLM safety controls through role-playing, instruction manipula
 **Technical Preparation:**
 
 - [ ] Set up isolated test environment for jailbreak attempts
-- [ ] Install jailbreak testing frameworks (Garak, PyRIT, PromptInject)
+- [ ] Install jailbreak testing frameworks (spikee, PyRIT, PromptInject)
 - [ ] Prepare jailbreak payload library (role-play, encoding, multi-turn)
 - [ ] Configure evidence collection for successful jailbreaks
 - [ ] Document baseline refusal behaviors

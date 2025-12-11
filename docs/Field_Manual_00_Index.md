@@ -84,15 +84,15 @@ mkdir -p {logs,evidence,configs,playbooks}
 pip install --upgrade pip
 
 # Install essential tools
-pip install garak requests python-dotenv
+pip install spikee requests python-dotenv
 
 # Verify installation
-garak --version
+spikee --version
 ```
 
 **Expected output:**
 
-```garak 0.9.0 or higher
+```spikee 0.4.6 or higher
 
 ```
 
@@ -123,11 +123,14 @@ chmod 600 configs/.env
 ### Step 4: Verify Setup
 
 ```bash
-# Test API connection
-export OPENAI_API_KEY=your-key-here
-garak -p openai -m gpt-3.5-turbo --runs 1
+# Initialize spikee workspace
+spikee init
 
-# Expected: ✓ Loaded plugins, ✓ Running test
+# Test with a basic prompt injection dataset
+spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+
+# Test against OpenAI (configure target with your API key)
+# Expected: ✓ Dataset generated, ✓ Ready for testing
 ```
 
 ✅ **Setup complete!** You're ready to use the playbooks.
@@ -144,14 +147,17 @@ garak -p openai -m gpt-3.5-turbo --runs 1
 # Navigate to your testing directory
 cd ~/llm-redteam
 
-# Run basic prompt injection test
-garak -p openai -m gpt-3.5-turbo \
-  --probe promptinject \
-  --runs 5 \
-  --report-prefix ./evidence/first_test
+# Initialize spikee workspace
+spikee init
+
+# Generate prompt injection dataset
+spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+
+# Test against your target (using OpenAI as example)
+spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
 # Check results
-ls evidence/
+ls workspace/results/
 ```
 
 **What to look for:**
@@ -214,7 +220,7 @@ cat > Dockerfile << 'EOF'
 FROM python:3.10-slim
 WORKDIR /workspace
 RUN apt-get update && apt-get install -y git curl
-RUN pip install garak requests python-dotenv textattack
+RUN pip install spikee requests python-dotenv textattack
 CMD ["/bin/bash"]
 EOF
 
@@ -244,15 +250,15 @@ pip install jinja2 markdown2
 
 ## Common Issues & Fixes
 
-| Issue                         | Solution                                                |
-| ----------------------------- | ------------------------------------------------------- |
-| ❌ `Authentication Error`     | Check API key in `.env`, verify key is active           |
-| ❌ `Rate Limit Exceeded`      | Add `--delay 2` to commands, check API quotas           |
-| ❌ `ModuleNotFoundError`      | Activate venv: `source venv/bin/activate`               |
-| ❌ `Command not found: garak` | Install: `pip install garak`, check venv active         |
-| ❌ No output files            | Verify `--report-prefix` path exists, check permissions |
-| ❌ Slow responses             | Normal for API testing, use `--runs` to limit tests     |
-| ❌ Connection timeout         | Check internet connection, verify API endpoint          |
+| Issue                          | Solution                                                |
+| ------------------------------ | ------------------------------------------------------- |
+| ❌ `Authentication Error`      | Check API key in `.env`, verify key is active           |
+| ❌ `Rate Limit Exceeded`       | Add `--delay 2` to commands, check API quotas           |
+| ❌ `ModuleNotFoundError`       | Activate venv: `source venv/bin/activate`               |
+| ❌ `Command not found: spikee` | Install: `pip install spikee`, check venv active        |
+| ❌ No output files             | Verify `--report-prefix` path exists, check permissions |
+| ❌ Slow responses              | Normal for API testing, use `--runs` to limit tests     |
+| ❌ Connection timeout          | Check internet connection, verify API endpoint          |
 
 **Still stuck?** Check the troubleshooting section in the specific playbook you're using.
 
@@ -389,20 +395,23 @@ Every playbook follows the same format:
 **Most common commands:**
 
 ```bash
+# Initialize workspace (one-time setup)
+spikee init
+
 # Prompt injection test
-garak -p openai -m gpt-3.5-turbo --probe promptinject
+spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
 # Jailbreak test
-garak -p openai -m gpt-3.5-turbo --probe jailbreak
+spikee generate --seed-folder workspace/datasets/seeds-simsonsun-high-quality-jailbreaks --include-standalone-inputs
+spikee test --target openai --dataset workspace/datasets/simsonsun-high-quality-jailbreaks-*.jsonl
 
-# Data extraction test
-garak -p openai -m gpt-3.5-turbo --probe leakage
+# Data extraction test (using custom seeds)
+spikee generate --seed-folder workspace/datasets/seeds-data-extraction --format full-prompt
+spikee test --target openai --dataset workspace/datasets/data-extraction-*.jsonl
 
-# Custom test with delays (for rate limits)
-garak -p openai -m gpt-3.5-turbo --probe promptinject --delay 2
-
-# Generate report
-garak [command] --report-prefix ./evidence/test_name
+# View results
+ls workspace/results/
 ```
 
 **File structure:**

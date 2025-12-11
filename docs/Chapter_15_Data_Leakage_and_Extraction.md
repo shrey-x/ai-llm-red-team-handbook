@@ -1362,9 +1362,9 @@ While few specialized tools exist yet, relevant projects include:
    - Generates variations to test boundaries
    - Can reveal memorization and leakage
 
-4. **Garak** - LLM vulnerability scanner
+4. **spikee** - Prompt injection and data extraction testing
    - Tests for various vulnerabilities including data leakage
-   - Extensible probe framework
+   - Extensible test framework
 
 **Custom tool development**
 
@@ -1402,7 +1402,7 @@ class ExtractionTool:
 
 **Architecture considerations**
 
-```
+```text
 ┌─────────────────┐
 │  Query Generator│
 │  - Templates    │

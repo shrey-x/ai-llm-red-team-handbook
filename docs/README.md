@@ -2,9 +2,9 @@
 
 # Introduction
 
-Version 0.024.113
+Version 0.024.115
 
-![Repository Banner](assets/banner.svg)
+![ ](assets/banner.svg)
 
 Welcome to the **AI LLM Red Team Handbook**.
 
