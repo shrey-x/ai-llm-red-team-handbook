@@ -196,8 +196,8 @@ for turn in conversation:
 
 ```bash
 # Generate jailbreak test dataset
-spikee generate --seed-folder workspace/datasets/seeds-jailbreak --format full-prompt
-spikee test --target openai --dataset workspace/datasets/jailbreak-*.jsonl \
+spikee generate --seed-folder datasets/seeds-jailbreak --format full-prompt
+spikee test --target openai_api --dataset datasets/jailbreak-*.jsonl \
   --probes jailbreak \
   --probes dan \
   --runs 30 \

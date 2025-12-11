@@ -227,8 +227,8 @@ memory_bombs = [
 
 ```bash
 # Test with spikee
-spikee generate --seed-folder workspace/datasets/seeds-dos --format full-prompt
-spikee test --target openai --dataset workspace/datasets/dos-*.jsonl \
+spikee generate --seed-folder datasets/seeds-dos --format full-prompt
+spikee test --target openai_api --dataset datasets/dos-*.jsonl \\
   --probes donotanswer \
   --probes resourceconsumption \
   --runs 20

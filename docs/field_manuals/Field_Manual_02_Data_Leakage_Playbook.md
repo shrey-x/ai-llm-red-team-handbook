@@ -226,8 +226,8 @@ for test in pii_tests:
 
 ```bash
 # Generate data leakage test dataset
-spikee generate --seed-folder workspace/datasets/seeds-data-leakage --format full-prompt
-spikee test --target openai --dataset workspace/datasets/data-leakage-*.jsonl \
+spikee generate --seed-folder datasets/seeds-data-leakage --format full-prompt
+spikee test --target openai_api --dataset datasets/data-leakage-*.jsonl \
   --probes leakage.literalstrings \
   --probes leakage.training_data \
   --runs 50 \

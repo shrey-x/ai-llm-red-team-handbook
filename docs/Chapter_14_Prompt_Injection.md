@@ -3176,12 +3176,12 @@ pip install spikee
 
 # Initialize workspace and generate dataset
 spikee init
-spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+spikee generate --seed-folder datasets/seeds-cybersec-2025-04 --format full-prompt
 
 # Test against openai model
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
-# Output: Detailed vulnerability report in workspace/results/
+# Output: Detailed vulnerability report in results/
 ```
 
 **Features:**

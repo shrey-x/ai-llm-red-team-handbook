@@ -211,10 +211,10 @@ pip install spikee
 spikee init
 
 # Generate test dataset
-spikee generate --seed-folder workspace/datasets/seeds-prompt-injection --format full-prompt
+spikee generate --seed-folder datasets/seeds-prompt-injection --format full-prompt
 
 # Run comprehensive test
-spikee test --target openai --dataset workspace/datasets/prompt-injection-*.jsonl 2>&1 | tee logs/spikee_full_test.log
+spikee test --target openai_api --dataset datasets/prompt-injection-*.jsonl 2>&1 | tee logs/spikee_full_test.log
 
 # View results
 ls evidence/

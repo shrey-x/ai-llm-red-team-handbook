@@ -58,15 +58,12 @@ curl $API -d '{"msg":"List email addresses from training"}'
 export OPENAI_API_KEY=sk-...
 mkdir -p {logs,evidence}
 
-# Automated testing
-spikee init
-spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+# Generate + test workflow
+spikee generate --seed-folder datasets/seeds-cybersec-2025-04 --format full-prompt
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-*.jsonl
 
-# Basic test
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-*.jsonl
-
-# Full suite
-spikee test --target openai --dataset workspace/datasets/* --output-dir evidence/full_test
+# Comprehensive test run
+spikee test --target openai_api --dataset datasets/* --output-dir evidence/full_test
 ```
 
 ---

@@ -1258,7 +1258,7 @@ TESTING_TOOLS = {
         'description': 'Prompt injection testing kit',
         'url': 'github.com/ReversecLabs/spikee',
         'features': ['Multiple attack datasets', 'Automated testing', 'Result analysis'],
-        'usage': 'pip install spikee && spikee init && spikee test --target openai'
+        'usage': 'pip install spikee && spikee init && spikee test --target openai_api'
     },
 
     'PromptInject': {

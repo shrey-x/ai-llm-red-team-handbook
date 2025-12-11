@@ -85,11 +85,11 @@ spikee init
 Now that you're set up, run your first security test:
 
 ```bash
-# Generate prompt injection dataset
-spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+# Generate test dataset
+spikee generate --seed-folder datasets/seeds-cybersec-2025-04 --format full-prompt
 
 # Run tests against target
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
 # Results are automatically saved in workspace/results/
 ```
@@ -114,10 +114,10 @@ spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-p
 
 ✅ You're ready to begin testing!
 
-1. **Read Section 1.5** for detailed environment configuration
-2. **Review Section 3** for all attack types and test procedures
-3. **Use Section 4** as tool reference when needed
-4. **Follow Section 6** for reporting your findings
+1.  **Read Section 1.5** for detailed environment configuration
+2.  **Review Section 3** for all attack types and test procedures
+3.  **Use Section 4** as tool reference when needed
+4.  **Follow Section 6** for reporting your findings
 
 ### **📘 Detailed Attack Playbooks**
 
@@ -159,32 +159,32 @@ For step-by-step attack procedures with extensive code examples, see the **modul
 
 ## **Table of Contents**
 
-0. Quick Start Guide for Junior Testers _(see above)_
-1. Introduction: Scope & Rules of Engagement  
-   1.5. Environment Setup & Configuration
-2. Red Teaming Phases
-3. Attack Types & Practical Test Examples
-   - Prompt Injection
-   - Jailbreaking (Safety Filter Bypass)
-   - Data Leakage/Memorization
-   - Plugin/Function Exploitation
-   - Denial-of-Service (DoS)/Resource Exhaustion
-   - Adversarial Example Generation (Evasion)
-   - Data Poisoning (Training-Time Attack)
-   - Model Extraction/Stealing
-   - Output Manipulation/Injection
-   - Side-Channel Attacks
-   - Multi-Modal Injection/Cross-Alignment
-   - Supply Chain/Infrastructure Attacks
-   - Boundary/Format/Fuzz Testing
-4. Tools Reference & CLI Commands
-5. Attack-Type–to–Tool Quick Reference Table  
-   5.5. API Configuration Guide
-6. Reporting Guidance
-7. Additional Guidance & Best Practices  
-   7.5. Field Checklists & Decision Trees
-8. Troubleshooting Guide  
-   Appendices: OWASP Top 10, MITRE ATLAS, Glossary, Sample Configs, Quick Reference
+0.  Quick Start Guide for Junior Testers _(see above)_
+1.  Introduction: Scope & Rules of Engagement
+    1.5. Environment Setup & Configuration
+2.  Red Teaming Phases
+3.  Attack Types & Practical Test Examples
+    - Prompt Injection
+    - Jailbreaking (Safety Filter Bypass)
+    - Data Leakage/Memorization
+    - Plugin/Function Exploitation
+    - Denial-of-Service (DoS)/Resource Exhaustion
+    - Adversarial Example Generation (Evasion)
+    - Data Poisoning (Training-Time Attack)
+    - Model Extraction/Stealing
+    - Output Manipulation/Injection
+    - Side-Channel Attacks
+    - Multi-Modal Injection/Cross-Alignment
+    - Supply Chain/Infrastructure Attacks
+    - Boundary/Format/Fuzz Testing
+4.  Tools Reference & CLI Commands
+5.  Attack-Type–to–Tool Quick Reference Table
+    5.5. API Configuration Guide
+6.  Reporting Guidance
+7.  Additional Guidance & Best Practices
+    7.5. Field Checklists & Decision Trees
+8.  Troubleshooting Guide
+    Appendices: OWASP Top 10, MITRE ATLAS, Glossary, Sample Configs, Quick Reference
 
 ---
 
@@ -337,18 +337,18 @@ docker run -it --rm \
 
 **For OpenAI:**
 
-1. Visit <https://platform.openai.com/api-keys>
-2. Sign in or create account
-3. Click "Create new secret key"
-4. Copy key (starts with `sk-`)
-5. Set usage limits to prevent overspending
+1.  Visit <https://platform.openai.com/api-keys>
+2.  Sign in or create account
+3.  Click "Create new secret key"
+4.  Copy key (starts with `sk-`)
+5.  Set usage limits to prevent overspending
 
 **For Anthropic (Claude):**
 
-1. Visit <https://console.anthropic.com/>
-2. Navigate to API Keys section
-3. Generate new key
-4. Copy key (starts with `sk-ant-`)
+1.  Visit <https://console.anthropic.com/>
+2.  Navigate to API Keys section
+3.  Generate new key
+4.  Copy key (starts with `sk-ant-`)
 
 **For Local Models (Ollama):**
 
@@ -602,10 +602,10 @@ curl -X POST https://api.target.com/v1/chat \
 
 **Test Sequencing Strategy:**
 
-1. **Start Low-Impact:** Begin with reconnaissance and baseline tests
-2. **Escalate Gradually:** Move from passive to active testing
-3. **Target Critical Paths:** Focus on high-value, high-risk scenarios
-4. **Document Everything:** Log all requests/responses
+1.  **Start Low-Impact:** Begin with reconnaissance and baseline tests
+2.  **Escalate Gradually:** Move from passive to active testing
+3.  **Target Critical Paths:** Focus on high-value, high-risk scenarios
+4.  **Document Everything:** Log all requests/responses
 
 ### **2.4 Execution Workflow**
 
@@ -626,7 +626,7 @@ echo "[$(date)] Starting test: $ATTACK_TYPE" | tee -a $LOG_FILE
 
 # Execute test (example with spikee)
 spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt 2>&1 | tee -a $LOG_FILE
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl 2>&1 | tee -a $LOG_FILE
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl 2>&1 | tee -a $LOG_FILE
 
 # Document results
 echo "[$(date)] Test completed: $ATTACK_TYPE" | tee -a $LOG_FILE
@@ -668,24 +668,24 @@ EOF
 
 **What to Collect for Each Finding:**
 
-1. **Request Details:**
+1.  **Request Details:**
 
-   - Exact prompt/payload used
-   - HTTP headers
-   - Timestamp
-   - Endpoint URL
+    - Exact prompt/payload used
+    - HTTP headers
+    - Timestamp
+    - Endpoint URL
 
-2. **Response Details:**
+2.  **Response Details:**
 
-   - Full response body
-   - Status code
-   - Response headers
-   - Response timestamp
+    - Full response body
+    - Status code
+    - Response headers
+    - Response timestamp
 
-3. **Visual Evidence:**
-   - Screenshot of exploit
-   - Video recording (for multi-step attacks)
-   - Network traffic capture (if applicable)
+3.  **Visual Evidence:**
+    - Screenshot of exploit
+    - Video recording (for multi-step attacks)
+    - Network traffic capture (if applicable)
 
 **Logging Template:**
 
@@ -701,7 +701,7 @@ cat > templates/finding_log.md << 'EOF'
 ### Request
 ```json
 {{REQUEST_JSON}}
-````
+```
 
 ### Response
 
@@ -766,7 +766,7 @@ echo "✅ Cleanup complete"
 EOF
 
 chmod +x cleanup.sh
-````
+```
 
 ---
 
@@ -774,12 +774,11 @@ chmod +x cleanup.sh
 
 ![ ](assets/page_header.svg)
 
-## **3\. Attack Types & Practical Test Examples**
+## **3. Attack Types & Practical Test Examples**
 
 ### **3.1 Prompt Injection**
 
-> [!NOTE] > **Field Manual Playbook**: [Field_Manual_01_Prompt_Injection_Playbook.md](field_manuals/Field_Manual_01_Prompt_Injection_Playbook.md)  
-> **Handbook Reference**: [Chapter_14_Prompt_Injection.md](Chapter_14_Prompt_Injection.md)
+> [!NOTE] > **Field Manual Playbook**: [Field_Manual_01_Prompt_Injection_Playbook.md](field_manuals/Field_Manual_01_Prompt_Injection_Playbook.md) > **Handbook Reference**: [Chapter_14_Prompt_Injection.md](Chapter_14_Prompt_Injection.md)
 
 | Category          | Details                                                                                                                                                                     |
 | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -793,15 +792,14 @@ chmod +x cleanup.sh
 
 ```bash
 spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 ```
 
 ---
 
 ### **3.2 Jailbreaking (Safety Filter Bypass)**
 
-> [!NOTE] > **Field Manual Playbook**: [Field_Manual_03_Jailbreak_Playbook.md](field_manuals/Field_Manual_03_Jailbreak_Playbook.md)  
-> **Handbook Reference**: [Chapter_16_Jailbreaks_and_Bypass_Techniques.md](Chapter_16_Jailbreaks_and_Bypass_Techniques.md)
+> [!NOTE] > **Field Manual Playbook**: [Field_Manual_03_Jailbreak_Playbook.md](field_manuals/Field_Manual_03_Jailbreak_Playbook.md) > **Handbook Reference**: [Chapter_16_Jailbreaks_and_Bypass_Techniques.md](Chapter_16_Jailbreaks_and_Bypass_Techniques.md)
 
 | Category          | Details                                                                                                                       |
 | :---------------- | :---------------------------------------------------------------------------------------------------------------------------- |
@@ -814,16 +812,16 @@ spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-p
 **Validation Command (Quick Check):**
 
 ```bash
-spikee generate --seed-folder workspace/datasets/seeds-simsonsun-high-quality-jailbreaks --include-standalone-inputs
-spikee test --target openai --dataset workspace/datasets/simsonsun-high-quality-jailbreaks-*.jsonl
+# DAN jailbreak attacks
+spikee generate --seed-folder datasets/seeds-simsonsun-high-quality-jailbreaks --include-standalone-inputs
+spikee test --target openai_api --dataset datasets/simsonsun-high-quality-jailbreaks-*.jsonl
 ```
 
 ---
 
 ### **3.3 Data Leakage / Memorization**
 
-> [!NOTE] > **Field Manual Playbook**: [Field_Manual_02_Data_Leakage_Playbook.md](field_manuals/Field_Manual_02_Data_Leakage_Playbook.md)  
-> **Handbook Reference**: [Chapter_15_Data_Leakage_and_Extraction.md](Chapter_15_Data_Leakage_and_Extraction.md)
+> [!NOTE] > **Field Manual Playbook**: [Field_Manual_02_Data_Leakage_Playbook.md](field_manuals/Field_Manual_02_Data_Leakage_Playbook.md) > **Handbook Reference**: [Chapter_15_Data_Leakage_and_Extraction.md](Chapter_15_Data_Leakage_and_Extraction.md)
 
 | Category          | Details                                                                                                                                        |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -836,16 +834,16 @@ spikee test --target openai --dataset workspace/datasets/simsonsun-high-quality-
 **Validation Command (Quick Check):**
 
 ```bash
-spikee generate --seed-folder workspace/datasets/seeds-data-extraction --format full-prompt
-spikee test --target openai --dataset workspace/datasets/data-extraction-*.jsonl
+# Data extraction attempts
+spikee generate --seed-folder datasets/seeds-data-extraction --format full-prompt
+spikee test --target openai_api --dataset datasets/data-extraction-*.jsonl
 ```
 
 ---
 
 ### **3.4 Plugin/Tool/Function Exploitation**
 
-> [!NOTE] > **Field Manual Playbook**: [Field_Manual_04_Plugin_Exploitation_Playbook.md](field_manuals/Field_Manual_04_Plugin_Exploitation_Playbook.md)  
-> **Handbook Reference**: [Chapter_17_Plugin_and_API_Exploitation.md](Chapter_17_Plugin_and_API_Exploitation.md)
+> [!NOTE] > **Field Manual Playbook**: [Field_Manual_04_Plugin_Exploitation_Playbook.md](field_manuals/Field_Manual_04_Plugin_Exploitation_Playbook.md) > **Handbook Reference**: [Chapter_17_Plugin_and_API_Exploitation.md](Chapter_17_Plugin_and_API_Exploitation.md)
 
 | Category          | Details                                                                                                                                        |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -857,8 +855,7 @@ spikee test --target openai --dataset workspace/datasets/data-extraction-*.jsonl
 
 ### **3.5 Denial-of-Service (DoS) and Resource Exhaustion**
 
-> [!NOTE] > **Field Manual Playbook**: [Field_Manual_08_DoS_Playbook.md](field_manuals/Field_Manual_08_DoS_Playbook.md)  
-> **Handbook Reference**: [Chapter_21_Model_DoS_Resource_Exhaustion.md](Chapter_21_Model_DoS_Resource_Exhaustion.md)
+> [!NOTE] > **Field Manual Playbook**: [Field_Manual_08_DoS_Playbook.md](field_manuals/Field_Manual_08_DoS_Playbook.md) > **Handbook Reference**: [Chapter_21_Model_DoS_Resource_Exhaustion.md](Chapter_21_Model_DoS_Resource_Exhaustion.md)
 
 | Category          | Details                                                                                                                        |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------- |
@@ -871,8 +868,9 @@ spikee test --target openai --dataset workspace/datasets/data-extraction-*.jsonl
 **Validation Command (Quick Check):**
 
 ```bash
-spikee generate --seed-folder workspace/datasets/seeds-dos-attacks --format full-prompt
-spikee test --target openai --dataset workspace/datasets/dos-attacks-*.jsonl
+# DoS resource exhaustion
+spikee generate --seed-folder datasets/seeds-dos --format full-prompt
+spikee test --target openai_api --dataset datasets/dos-attacks-*.jsonl
 ```
 
 ---
@@ -894,7 +892,7 @@ spikee test --target openai --dataset workspace/datasets/dos-attacks-*.jsonl
 
 ```bash
 spikee generate --seed-folder workspace/datasets/seeds-encoding-attacks --plugin 1337
-spikee test --target openai --dataset workspace/datasets/encoding-attacks-*.jsonl
+spikee test --target openai_api --dataset datasets/encoding-attacks-*.jsonl
 ```
 
 ---
@@ -1056,15 +1054,15 @@ radamsa input_sample.json | curl -d @- $API_URL
 
 > [!TIP] > **Complete Setup Guide**: See [Standardized Laboratory Setup](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
 
-| Tool             | Focus                               | Quick Command                                                                                          |
-| :--------------- | :---------------------------------- | :----------------------------------------------------------------------------------------------------- |
-| **spikee**       | Automated prompt injection testing  | `spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04; spikee test --target openai` |
-| **PromptBench**  | Adversarial robustness benchmarking | `python promptbench.py --model_api openai`                                                             |
-| **TextAttack**   | Adversarial examples (evasion)      | `textattack attack --recipe textfooler`                                                                |
-| **LLM-Guard**    | Input/Output guardrails testing     | `pip install llm-guard`                                                                                |
-| **Burp Suite**   | API/Plugin interception             | (Use Proxy: 127.0.0.1:8080)                                                                            |
-| **AFL++**        | Fuzzing inputs/formats              | `afl-fuzz -i inputs/ -o findings/ ./target`                                                            |
-| **KnockoffNets** | Model extraction/stealing           | `python extraction_attack.py` [View Repo](https://github.com/tribhuvanesh/knockoffnets)                |
+| Tool             | Focus                               | Quick Command                                                                                    |
+| :--------------- | :---------------------------------- | :----------------------------------------------------------------------------------------------- |
+| **spikee**       | Automated prompt injection testing  | `spikee generate --seed-folder datasets/seeds-cybersec-2025-04; spikee test --target openai_api` |
+| **PromptBench**  | Adversarial robustness benchmarking | `python promptbench.py --model_api openai`                                                       |
+| **TextAttack**   | Adversarial examples (evasion)      | `textattack attack --recipe textfooler`                                                          |
+| **LLM-Guard**    | Input/Output guardrails testing     | `pip install llm-guard`                                                                          |
+| **Burp Suite**   | API/Plugin interception             | (Use Proxy: 127.0.0.1:8080)                                                                      |
+| **AFL++**        | Fuzzing inputs/formats              | `afl-fuzz -i inputs/ -o findings/ ./target`                                                      |
+| **KnockoffNets** | Model extraction/stealing           | `python extraction_attack.py` [View Repo](https://github.com/tribhuvanesh/knockoffnets)          |
 
 ---
 

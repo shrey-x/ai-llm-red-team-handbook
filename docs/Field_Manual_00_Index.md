@@ -151,13 +151,13 @@ cd ~/llm-redteam
 spikee init
 
 # Generate prompt injection dataset
-spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
+spikee generate --seed-folder datasets/seeds-cybersec-2025-04 --format full-prompt
 
 # Test against your target (using OpenAI as example)
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
 # Check results
-ls workspace/results/
+ls results/
 ```
 
 **What to look for:**
@@ -400,18 +400,18 @@ spikee init
 
 # Prompt injection test
 spikee generate --seed-folder workspace/datasets/seeds-cybersec-2025-04 --format full-prompt
-spikee test --target openai --dataset workspace/datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
+spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-dataset-*.jsonl
 
 # Jailbreak test
-spikee generate --seed-folder workspace/datasets/seeds-simsonsun-high-quality-jailbreaks --include-standalone-inputs
-spikee test --target openai --dataset workspace/datasets/simsonsun-high-quality-jailbreaks-*.jsonl
+spikee generate --seed-folder datasets/seeds-simsonsun-high-quality-jailbreaks --include-standalone-inputs
+spikee test --target openai_api --dataset datasets/simsonsun-high-quality-jailbreaks-*.jsonl
 
 # Data extraction test (using custom seeds)
-spikee generate --seed-folder workspace/datasets/seeds-data-extraction --format full-prompt
-spikee test --target openai --dataset workspace/datasets/data-extraction-*.jsonl
+spikee generate --seed-folder datasets/seeds-data-extraction --format full-prompt
+spikee test --target openai_api --dataset datasets/data-extraction-*.jsonl
 
 # View results
-ls workspace/results/
+ls results/
 ```
 
 **File structure:**
